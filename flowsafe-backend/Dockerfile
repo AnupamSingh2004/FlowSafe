@@ -12,13 +12,12 @@ RUN apt-get update \
         postgresql-client \
         build-essential \
         libpq-dev \
-        libgl1-mesa-glx \
+        libgl1-mesa-dri \
         libglib2.0-0 \
         libsm6 \
         libxext6 \
         libxrender-dev \
         libgomp1 \
-        libglib2.0-0 \
         tesseract-ocr \
         tesseract-ocr-eng \
     && rm -rf /var/lib/apt/lists/*
