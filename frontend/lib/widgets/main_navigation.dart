@@ -7,6 +7,8 @@ import '../screens/reports_analytics_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/settings_screen.dart';
 import '../screens/about_help_screen.dart';
+import '../screens/language_selection_screen.dart';
+import '../screens/offline_sync_screen.dart';
 import '../services/api_service.dart';
 import '../widgets/auth_wrapper.dart';
 
@@ -179,9 +181,19 @@ class _MainNavigationState extends State<MainNavigation> {
             builder: (context) => ProfileScreen(userType: widget.userType),
           ));
         }),
+        _buildMenuItem(Icons.sync, 'Offline Sync', () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => const OfflineSyncScreen(),
+          ));
+        }),
         _buildMenuItem(Icons.settings, 'Settings', () {
           Navigator.push(context, MaterialPageRoute(
             builder: (context) => SettingsScreen(userType: widget.userType),
+          ));
+        }),
+        _buildMenuItem(Icons.language, 'Language / भाषा', () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => const LanguageSelectionScreen(),
           ));
         }),
         _buildMenuItem(Icons.help, 'Help & Support', () {

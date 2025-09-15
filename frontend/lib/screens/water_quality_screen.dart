@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import '../services/location_service.dart';
+import '../services/offline_data_service.dart';
 
 class WaterQualityScreen extends StatefulWidget {
   final String userType;
@@ -417,13 +418,38 @@ class _WaterQualityScreenState extends State<WaterQualityScreen> {
     });
 
     try {
-      // Simulate API call
-      await Future.delayed(const Duration(seconds: 2));
+      // Prepare report data
+      final reportData = {
+        'water_source': _selectedWaterSource,
+        'test_method': _selectedTestMethod,
+        'ph_level': _phController.text,
+        'turbidity': _turbidityController.text,
+        'tds': _tdsController.text,
+        'bacterial_count': _bacterialCountController.text,
+        'chlorine_level': _chlorineController.text,
+        'location': _currentLocation,
+        'latitude': _currentPosition?.latitude,
+        'longitude': _currentPosition?.longitude,
+        'reported_by': _reportedBy,
+        'timestamp': DateTime.now().toIso8601String(),
+      };
+
+      // Store offline first
+      final offlineService = OfflineDataService();
+      await offlineService.storeWaterQualityReport(reportData);
+
+      // Try to sync if online
+      try {
+        await Future.delayed(const Duration(seconds: 1)); // Simulate API call
+        // If successful, the offline service will handle sync
+      } catch (e) {
+        // If failed, data stays in offline queue
+      }
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Water quality report submitted successfully!'),
+            content: Text('Water quality report saved! Will sync when online.'),
             backgroundColor: Colors.green,
           ),
         );
@@ -443,7 +469,7 @@ class _WaterQualityScreenState extends State<WaterQualityScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Error submitting report: ${e.toString()}'),
+            content: Text('Error saving report: ${e.toString()}'),
             backgroundColor: Colors.red,
           ),
         );

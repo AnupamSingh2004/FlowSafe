@@ -1,5 +1,5 @@
-# AarogyaRekha 🛡️
-### *Drawing the Digital Line Between Health and Disease*
+# FlowSafe ��🛡️
+### *Smart Health Surveillance and Early Warning System for Water-borne Diseases*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Flutter](https://img.shields.io/badge/Flutter-3.8.1-blue.svg)](https://flutter.dev/)
@@ -8,13 +8,16 @@
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![Docker](https://img.shields.io/badge/Docker-Containerized-blue.svg)](https://www.docker.com/)
 [![Healthcare](https://img.shields.io/badge/Healthcare-AI%20Powered-red.svg)](https://www.who.int/)
-[![AI/ML](https://img.shields.io/badge/AI%2FML-TensorFlow-orange.svg)](https://www.tensorflow.org/)
+[![AI/ML](https://img.shields.io/badge/AI%2FML-XGBoost-orange.svg)](https://xgboost.ai/)
+[![Water Quality](https://img.shields.io/badge/Water%20Quality-IoT%20Ready-blue.svg)](https://www.who.int/news-room/fact-sheets/detail/drinking-water)
 
 ## 🎯 Overview
 
-AarogyaRekha is an AI-powered preventive healthcare system that predicts and alerts communities about potential disease outbreaks like malaria, dengue, diarrhea, and malnutrition — **even before symptoms occur**.
+FlowSafe is an AI-powered Smart Health Surveillance and Early Warning System specifically designed to detect, monitor, and prevent outbreaks of water-borne diseases in vulnerable communities, particularly in rural areas and tribal belts of the Northeastern Region (NER).
 
-By leveraging satellite data, climatic patterns, and behavioral insights, AarogyaRekha builds area-specific health risk forecasts, empowering local health workers, villagers, and tourists to take timely preventive action.
+The system combines water quality monitoring, disease surveillance, community reporting, and educational modules to create a comprehensive solution for water-borne disease prevention including **Diarrhea, Cholera, Typhoid, Hepatitis A, and Dysentery**.
+
+By integrating IoT sensors, mobile health reporting, and AI-based outbreak prediction, FlowSafe empowers health workers, community volunteers, and local governance bodies to take proactive measures before outbreaks occur.
 
 ## 🎥 Demo Video
 
@@ -67,37 +70,55 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 
 ## 🌟 Key Features
 
-### 🤖 AI-Powered Disease Prevention
-- **Multilingual AI Chatbot** for health queries and prevention tips
-- **Personalized recommendations** based on user location and symptoms
-- **24/7 accessibility** for ASHA workers, villagers, and tourists
+### 💧 Water Quality Monitoring
+- **Real-time water testing** with IoT sensor integration
+- **Manual test kit support** for pH, turbidity, TDS, bacterial count
+- **Water source tracking** (Borewell, Hand Pump, Community Well, etc.)
+- **Quality assessment** with color-coded indicators and treatment recommendations
+- **GPS-based location tagging** for contamination source mapping
 
-### 📊 Satellite Intelligence
-- **Real-time satellite data** from Sentinel-2, MODIS, and ISRO Bhuvan
-- **Stagnant water detection** for mosquito breeding zones
-- **Vegetation density monitoring** (NDVI) for climate-disease relationships
-- **Weather pattern analysis** for seasonal disease triggers
+### 🏥 Disease Surveillance & Early Warning
+- **Water-borne disease tracking** (Diarrhea, Cholera, Typhoid, Hepatitis A)
+- **AI-powered outbreak prediction** with risk scoring algorithms
+- **Symptom correlation** with water source contamination
+- **Patient demographics** and disease severity assessment
+- **Automatic health authority alerts** for high-risk cases
+
+### 🎓 Educational & Awareness Modules
+- **Interactive hygiene education** with multi-lesson format
+- **Safe water practices** and purification methods training
+- **Disease prevention techniques** and emergency response
+- **Community health best practices** and traditional medicine integration
+- **Progress tracking** for educational module completion
+
+### 🌍 Multilingual Support
+- **6 Regional languages** including tribal languages (Hindi, Bengali, Assamese, Nepali, Manipuri)
+- **Localized health content** with cultural sensitivity
+- **Voice-based navigation** for low-literacy users
+- **Community reporting** in preferred languages
+
+### � Offline Functionality
+- **Offline data collection** for remote areas with poor connectivity
+- **Automatic sync** when internet becomes available
+- **Data persistence** with local storage and queue management
+- **Sync status tracking** with detailed progress indicators
 
 ### 🚨 Smart Alert System
-- **Color-coded risk zones** (Green: Safe, Yellow: Caution, Red: High Risk)
-- **Push notifications** to users, PHCs, and ASHA workers
-- **Multi-channel alerts** via SMS, app, and IVR for low-literacy users
-- **Preventive tips** delivered in local languages
-
-### 🗺️ Interactive Risk Maps
-- **Village-level granularity** for localized disease prediction
-- **Real-time risk visualization** with interactive maps
-- **Historical trend analysis** for outbreak patterns
-- **Geofenced alerts** for location-specific warnings
+- **Risk-based notifications** with automatic outbreak detection
+- **Multi-channel alerts** to health workers and governance bodies
+- **Community broadcast** for preventive measure announcements
+- **Emergency contact integration** for rapid response
 
 ## 🎯 Target Audience
 
 | User Group | Purpose Served |
 |------------|----------------|
-| 🧑‍⚕️ **ASHA/ANM Workers** | Get early alerts and visit only high-risk homes for better focus and awareness |
-| 🏥 **Primary Health Centers (PHCs)** | Plan vaccines, stock medicines, and organize camps based on risk predictions |
-| 👨‍👩‍👧 **Rural Households** | Receive simple alerts and prevention tips in their local language |
-| 🧳 **Tourists** | Get health risk warnings and travel safety suggestions for specific destinations |
+| 🧑‍⚕️ **ASHA/ANM Workers** | Report water-borne disease cases, monitor water quality, and educate communities on prevention |
+| 🏥 **Primary Health Centers (PHCs)** | Receive early outbreak alerts, track disease patterns, and coordinate rapid response |
+| 👨‍👩‍👧 **Rural & Tribal Communities** | Access multilingual health education, report water quality issues, and receive preventive care guidance |
+| 🌊 **Community Volunteers** | Conduct water quality testing, report contamination, and support health surveillance activities |
+| 🏛️ **Local Governance Bodies** | Monitor district-level health trends, allocate resources, and implement preventive interventions |
+| 🚰 **Water & Sanitation Departments** | Track water source contamination, prioritize infrastructure improvements, and ensure safe water supply |
 | 🏛️ **District Officials** | Evidence-based planning and resource allocation |
 
 ## 🛠️ Technology Stack
@@ -115,18 +136,26 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 - **Redis** - Caching and session management
 - **Celery** - Asynchronous task processing
 
-### AI/ML
-- **TensorFlow** - Machine learning models
-- **XGBoost** - Disease prediction algorithms
-- **OpenCV** - Satellite image processing
-- **NumPy & Pandas** - Data manipulation
-- **Scikit-learn** - ML utilities
+### AI/ML & Prediction
+- **XGBoost** - Water-borne disease prediction models
+- **TensorFlow** - Epidemic pattern recognition
+- **OpenCV** - Water quality image analysis
+- **NumPy & Pandas** - Environmental data processing
+- **Scikit-learn** - Risk assessment algorithms
+
+### IoT & Water Monitoring
+- **Arduino/ESP32** - Water quality sensors integration
+- **pH Sensors** - Water acidity measurement
+- **TDS Meters** - Total dissolved solids detection
+- **Turbidity Sensors** - Water clarity assessment
+- **Temperature Sensors** - Thermal monitoring
 
 ### Satellite Data & APIs
-- **MODIS** - Climate and vegetation data
-- **ISRO Bhuvan** - Indian satellite data platform
-- **OpenWeatherMap** - Weather data API
-- **Google Earth Engine** - Geospatial analysis
+- **MODIS** - Water body monitoring and climate data
+- **ISRO Bhuvan** - Water resources satellite imagery
+- **OpenWeatherMap** - Rainfall and humidity data
+- **Google Earth Engine** - Watershed analysis
+- **NASA FIRMS** - Water contamination tracking
 
 ## 🚀 Quick Start
 
@@ -141,13 +170,13 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/aarogyarekha.git
-   cd aarogyarekha
+   git clone https://github.com/yourusername/flowsafe.git
+   cd flowsafe
    ```
 
 2. **Backend Setup**
    ```bash
-   cd aarogyarekha-backend
+   cd flowsafe-backend
    
    # Create virtual environment
    python -m venv venv
@@ -228,10 +257,12 @@ aarogyarekha/
 - `POST /api/auth/logout/` - User logout
 - `POST /api/auth/google/` - Google OAuth login
 
-### Health Prediction Endpoints
-- `POST /api/predict/health/` - Get health risk prediction
-- `GET /api/predict/area/{location}/` - Get area-specific risk data
-- `GET /api/alerts/` - Get user alerts
+### Water Quality & Disease Prediction Endpoints
+- `POST /api/water-quality/report/` - Submit water quality test results
+- `GET /api/water-quality/reports/` - Get water quality history
+- `POST /api/predict/waterborne-disease/` - Get disease risk prediction
+- `GET /api/disease-surveillance/area/{location}/` - Get area disease monitoring data
+- `GET /api/alerts/waterborne/` - Get water-related health alerts
 - `POST /api/alerts/mark-read/` - Mark alerts as read
 
 ### User Management Endpoints
@@ -248,7 +279,7 @@ Create a `.env` file in the backend directory:
 
 ```env
 # Database
-DATABASE_URL=postgresql://username:password@localhost:5432/aarogyarekha
+DATABASE_URL=postgresql://username:password@localhost:5432/flowsafe
 
 # Django
 SECRET_KEY=your-secret-key-here
@@ -289,7 +320,7 @@ GOOGLE_OAUTH_CLIENT_ID=your-google-oauth-client-id
 
 ### Backend Tests
 ```bash
-cd aarogyarekha-backend
+cd flowsafe-backend
 python manage.py test
 ```
 
@@ -307,25 +338,25 @@ flutter drive --target=test_driver/app.dart
 
 ## 📊 ML Model Training
 
-### Disease Prediction Model
+### Water-borne Disease Prediction Model
 ```bash
 cd disease_prediction
-python train_model.py --data-path ./data/delhi_disease_data.csv --model-output ./models/
+python train_model.py --data-path ./data/waterborne_disease_data.csv --model-output ./models/ --focus waterborne
 ```
 
-### Satellite Image Processing
+### Water Quality Analysis
 ```bash
 cd disease_prediction
-python process_satellite_data.py --region Delhi --start-date 2023-01-01 --end-date 2023-12-31
+python process_water_quality_data.py --region "Northeastern Region" --start-date 2023-01-01 --end-date 2023-12-31
 ```
 
 ## 🚀 Deployment
 
 ### Backend Deployment (Docker)
 ```bash
-cd aarogyarekha-backend
-docker build -t aarogyarekha-backend .
-docker run -p 8000:8000 aarogyarekha-backend
+cd flowsafe-backend
+docker build -t flowsafe-backend .
+docker run -p 8000:8000 flowsafe-backend
 ```
 
 ### Frontend Deployment
@@ -395,68 +426,21 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 | 🚨 **Quick Community Awareness** | Smart alerts prevent panic and misinformation |
 | 📡 **Evidence-Based Planning** | Satellite + AI combo gives strong backend support |
 
-## 🌐 Government Alignment
-
-AarogyaRekha aligns with key government initiatives:
-- **National Health Mission (NHM)**
-- **Pradhan Mantri Bharatiya Janaushadhi Pariyojana (PMBJP)**
-- **Swachh Bharat Abhiyan**
-- **Poshan Abhiyaan**
-- **Digital India Initiative**
-## 👥 Contributors
-
-This application was developed during the **Hack4Health Hackathon** by:
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/Prakriti308">
-          <img src="https://github.com/Prakriti308.png" width="100px;" alt="Prakriti308"/>
-          <br />
-          <sub><b>Prakriti308</b></sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/princepal99">
-          <img src="https://github.com/princepal99.png" width="100px;" alt="princepal99"/>
-          <br />
-          <sub><b>princepal99</b></sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/Sankso">
-          <img src="https://github.com/Sankso.png" width="100px;" alt="Sanskriti Pal"/>
-          <br />
-          <sub><b>Sanskriti Pal</b></sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/AnupamSingh2004">
-          <img src="https://github.com/AnupamSingh2004.png" width="100px;" alt="AnupamSingh2004"/>
-          <br />
-          <sub><b>AnupamSingh2004</b></sub>
-        </a>
-      </td>
-    </tr>
-  </table>
-</div>
-
-### 🏆 Hackathon Achievement
-**AarogyaRekha** was developed as part of the **Hack4Health Hackathon**, showcasing innovative solutions for preventive healthcare through AI and satellite technology. Our team collaborated intensively to create this comprehensive health prediction and alert system that addresses real-world healthcare challenges in rural India.
+### 🏆 Smart India Hackathon Achievement
+**FlowSafe** was developed for the **Smart India Hackathon**, showcasing innovative solutions for water-borne disease prevention through AI, IoT sensors, and satellite technology. Our team collaborated intensively to create this comprehensive water quality monitoring and disease surveillance system that addresses critical water-related health challenges in India's Northeastern Region.
 
 ---
 
 <div align="center">
-  <h3>🎤 "AarogyaRekha is not just an app — it's a sentinel."</h3>
-  <p><i>A smart digital boundary that watches over your village's health, alerts you before diseases can cross that line, and empowers communities to act — not after, but before illness spreads.</i></p>
+  <h3>� "FlowSafe is not just an app — it's a guardian of water safety."</h3>
+  <p><i>A smart water monitoring system that stands watch over your community's water sources, alerts you before contamination spreads, and empowers communities to protect their health — not after disease outbreaks, but before they begin.</i></p>
 </div>
 
 ---
 
 <div align="center">
-  <p>Made with ❤️ for India's Healthcare Future</p>
+  <p>Made with 💧 for India's Water Safety & Health Future</p>
   <p>
-    <a href="https://github.com/yourusername/aarogyarekha/issues">Request Feature</a>
+    <a href="https://github.com/yourusername/flowsafe/issues">Request Feature</a>
   </p>
 </div>

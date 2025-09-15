@@ -5,6 +5,9 @@ import '../widgets/recent_notifications_card.dart';
 import '../services/health_prediction_service.dart';
 import '../services/location_service.dart';
 import 'package:geolocator/geolocator.dart';
+import 'water_quality_screen.dart';
+import 'disease_monitoring_screen.dart';
+import 'hygiene_education_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   final String userType;
@@ -135,6 +138,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
               
               // Emergency Contacts
               const EmergencyContactsCard(),
+              const SizedBox(height: 16),
+              
+              // FlowSafe Features - Water Quality & Disease Monitoring
+              _buildFlowSafeFeatures(),
               const SizedBox(height: 16),
               
               // Recent Notifications
@@ -1192,6 +1199,187 @@ class _DashboardScreenState extends State<DashboardScreen> {
     } else {
       return '${difference.inDays} days ago';
     }
+  }
+
+  Widget _buildFlowSafeFeatures() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF1976D2).withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Icon(
+                  Icons.health_and_safety,
+                  color: Color(0xFF1976D2),
+                  size: 24,
+                ),
+              ),
+              const SizedBox(width: 12),
+              const Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'FlowSafe Health Surveillance',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1976D2),
+                      ),
+                    ),
+                    Text(
+                      'Water Quality & Disease Monitoring',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          GridView.count(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            crossAxisCount: 2,
+            childAspectRatio: 1.1,
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            children: [
+              _buildFeatureCard(
+                'Water Quality\nMonitoring',
+                Icons.water_drop,
+                const Color(0xFF1976D2),
+                'Test and report water quality parameters',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WaterQualityScreen(userType: widget.userType),
+                    ),
+                  );
+                },
+              ),
+              _buildFeatureCard(
+                'Disease\nSurveillance',
+                Icons.medical_services,
+                const Color(0xFF42A5F5),
+                'Report water-borne disease cases',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DiseaseMonitoringScreen(userType: widget.userType),
+                    ),
+                  );
+                },
+              ),
+              _buildFeatureCard(
+                'Hygiene\nEducation',
+                Icons.school,
+                const Color(0xFF64B5F6),
+                'Learn disease prevention practices',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HygieneEducationScreen(userType: widget.userType),
+                    ),
+                  );
+                },
+              ),
+              _buildFeatureCard(
+                'Community\nReporting',
+                Icons.people,
+                const Color(0xFF90CAF9),
+                'Report community health concerns',
+                () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Community reporting feature coming soon!'),
+                      backgroundColor: Color(0xFF1976D2),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFeatureCard(String title, IconData icon, Color color, String description, VoidCallback onTap) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(8),
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.05),
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: color.withOpacity(0.2)),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: color.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Icon(
+                icon,
+                color: color,
+                size: 24,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: color,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              description,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 10,
+                color: Colors.grey[600],
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Future<void> _refreshData() async {
