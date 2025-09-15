@@ -101,15 +101,15 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
   String _getWelcomeMessage() {
     switch (widget.userType) {
       case 'ASHA/ANM':
-        return "🩺 **Welcome, Health Worker!**\n\nI'm AarogyaRekha's AI Assistant, specialized in preventive healthcare. I can help you with:\n\n• Community health screening tips\n• Disease prevention strategies\n• Early warning signs identification\n• Family health education guidance\n\nHow can I assist you today?";
+        return "🩺 **Welcome, Health Worker!**\n\nI'm FlowSafe's AI Assistant, specialized in preventive healthcare. I can help you with:\n\n• Community health screening tips\n• Disease prevention strategies\n• Early warning signs identification\n• Family health education guidance\n\nHow can I assist you today?";
       case 'PHC/District':
         return "🏥 **Welcome, Healthcare Official!**\n\nI'm here to support your public health initiatives with:\n\n• Outbreak prevention strategies\n• Resource planning for preventive care\n• Community health campaign guidance\n• Seasonal disease preparation\n\nWhat would you like to know?";
       case 'Rural':
-        return "🏠 **Welcome to AarogyaRekha!**\n\nI'm your family health assistant, here to help you keep your loved ones healthy with:\n\n• Simple prevention tips\n• Seasonal health advice\n• Child health guidance\n• Safe practices for daily life\n\nWhat health topic can I help you with?";
+        return "🏠 **Welcome to FlowSafe!**\n\nI'm your family health assistant, here to help you keep your loved ones healthy with:\n\n• Simple prevention tips\n• Seasonal health advice\n• Child health guidance\n• Safe practices for daily life\n\nWhat health topic can I help you with?";
       case 'Tourist':
         return "🧳 **Welcome, Traveler!**\n\nI'm here to help you stay healthy during your journey with:\n\n• Travel health kit essentials\n• Destination-specific health risks\n• Food and water safety tips\n• Preventive measures for common diseases\n\nWhere are you traveling, and how can I help?";
       default:
-        return "🛡️ **Welcome to AarogyaRekha!**\n\nI'm your AI health assistant focused on disease prevention. I can help you with preventive measures, health tips, and early warning signs.\n\nWhat would you like to know about staying healthy?";
+        return "🛡️ **Welcome to FlowSafe!**\n\nI'm your AI health assistant focused on disease prevention. I can help you with preventive measures, health tips, and early warning signs.\n\nWhat would you like to know about staying healthy?";
     }
   }
 
@@ -205,13 +205,13 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
       backgroundColor: const Color(0xFFF8FAFC),
       appBar: AppBar(
         title: const Text(
-          'AarogyaRekha AI Assistant',
+          'FlowSafe AI Assistant',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
@@ -259,22 +259,22 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
             width: 100,
             height: 100,
             decoration: BoxDecoration(
-              color: const Color(0xFF2E7D8A).withOpacity(0.1),
+              color: const Color(0xFF1976D2).withOpacity(0.1),
               borderRadius: BorderRadius.circular(50),
             ),
             child: const Icon(
               Icons.health_and_safety,
               size: 50,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 20),
           const Text(
-            'AarogyaRekha AI Assistant',
+            'FlowSafe AI Assistant',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 8),
@@ -302,14 +302,14 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
               radius: 20,
               backgroundColor: message.type == MessageType.system 
                   ? Colors.orange.withOpacity(0.1)
-                  : const Color(0xFF2E7D8A).withOpacity(0.1),
+                  : const Color(0xFF1976D2).withOpacity(0.1),
               child: Icon(
                 message.type == MessageType.system 
                     ? Icons.info_outline
                     : Icons.health_and_safety,
                 color: message.type == MessageType.system 
                     ? Colors.orange
-                    : const Color(0xFF2E7D8A),
+                    : const Color(0xFF1976D2),
                 size: 20,
               ),
             ),
@@ -321,7 +321,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: message.isUser 
-                    ? const Color(0xFF2E7D8A)
+                    ? const Color(0xFF1976D2)
                     : message.type == MessageType.system
                         ? Colors.orange.withOpacity(0.1)
                         : Colors.white,
@@ -356,23 +356,23 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
                               height: 1.4,
                             ),
                             h1: const TextStyle(
-                              color: Color(0xFF2E7D8A),
+                              color: Color(0xFF1976D2),
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                             h2: const TextStyle(
-                              color: Color(0xFF2E7D8A),
+                              color: Color(0xFF1976D2),
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                             h3: const TextStyle(
-                              color: Color(0xFF2E7D8A),
+                              color: Color(0xFF1976D2),
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                             strong: const TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF2E7D8A),
+                              color: Color(0xFF1976D2),
                             ),
                             em: const TextStyle(
                               fontStyle: FontStyle.italic,
@@ -382,7 +382,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
                               fontFamily: 'monospace',
                             ),
                             listBullet: const TextStyle(
-                              color: Color(0xFF2E7D8A),
+                              color: Color(0xFF1976D2),
                             ),
                           ),
                         ),
@@ -405,7 +405,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
             const SizedBox(width: 12),
             const CircleAvatar(
               radius: 20,
-              backgroundColor: Color(0xFF2E7D8A),
+              backgroundColor: Color(0xFF1976D2),
               child: Icon(
                 Icons.person,
                 color: Colors.white,
@@ -426,10 +426,10 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
         children: [
           CircleAvatar(
             radius: 20,
-            backgroundColor: const Color(0xFF2E7D8A).withOpacity(0.1),
+            backgroundColor: const Color(0xFF1976D2).withOpacity(0.1),
             child: const Icon(
               Icons.health_and_safety,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
               size: 20,
             ),
           ),
@@ -448,7 +448,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
               ],
             ),
             child: const SpinKitThreeBounce(
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
               size: 20,
             ),
           ),
@@ -470,7 +470,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 12),
@@ -494,7 +494,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: const Color(0xFF2E7D8A).withOpacity(0.2),
+                      color: const Color(0xFF1976D2).withOpacity(0.2),
                     ),
                   ),
                   child: Row(
@@ -510,7 +510,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
                           style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
-                            color: Color(0xFF2E7D8A),
+                            color: Color(0xFF1976D2),
                           ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -567,7 +567,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
           const SizedBox(width: 12),
           Container(
             decoration: BoxDecoration(
-              color: const Color(0xFF2E7D8A),
+              color: const Color(0xFF1976D2),
               borderRadius: BorderRadius.circular(24),
             ),
             child: IconButton(
@@ -584,7 +584,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> with TickerProviderStateM
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('AarogyaRekha AI Assistant'),
+        title: const Text('FlowSafe AI Assistant'),
         content: const Text(
           'This AI assistant provides preventive healthcare guidance based on your user type. '
           'It focuses on disease prevention, early warning signs, and health education.\n\n'

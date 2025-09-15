@@ -304,13 +304,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    const Color(0xFF2E7D8A).withAlpha(26),
-                    const Color(0xFF2E7D8A).withAlpha(13),
+                    const Color(0xFF1976D2).withAlpha(26),
+                    const Color(0xFF1976D2).withAlpha(13),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: const Color(0xFF2E7D8A).withAlpha(51),
+                  color: const Color(0xFF1976D2).withAlpha(51),
                 ),
               ),
               child: Row(
@@ -318,7 +318,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF2E7D8A),
+                      color: const Color(0xFF1976D2),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Icon(
@@ -333,11 +333,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          "💡 AarogyaRekha Insight",
+                          "💡 FlowSafe Insight",
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xFF2E7D8A),
+                            color: Color(0xFF1976D2),
                           ),
                         ),
                         const SizedBox(height: 8),

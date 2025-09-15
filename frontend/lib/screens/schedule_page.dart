@@ -232,7 +232,7 @@ class _SchedulePageState extends State<SchedulePage> {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,
-                            foregroundColor: const Color(0xFF2E7D8A),
+                            foregroundColor: const Color(0xFF1976D2),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 24,
                               vertical: 12,

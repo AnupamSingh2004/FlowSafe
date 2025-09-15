@@ -145,14 +145,14 @@ class _DynamicBottomNavBarState extends State<DynamicBottomNavBar>
             colors: [
               Color(0xFF667eea),
               Color(0xFF764ba2),
-              Color(0xFF2E7D8A),
+              Color(0xFF1976D2),
             ],
             stops: [0.0, 0.5, 1.0],
           ),
           borderRadius: BorderRadius.circular(32),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF2E7D8A).withOpacity(0.3),
+              color: const Color(0xFF1976D2).withOpacity(0.3),
               offset: const Offset(0, 8),
               blurRadius: 30,
               spreadRadius: 0,

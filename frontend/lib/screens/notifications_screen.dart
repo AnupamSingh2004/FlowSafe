@@ -22,7 +22,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notifications'),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
@@ -132,7 +132,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   child: ElevatedButton(
                     onPressed: _saveSettings,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF2E7D8A),
+                      backgroundColor: const Color(0xFF1976D2),
                       foregroundColor: Colors.white,
                     ),
                     child: const Text('Save Settings'),
@@ -168,7 +168,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -192,12 +192,12 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: const Color(0xFF2E7D8A).withAlpha(26),
+              color: const Color(0xFF1976D2).withAlpha(26),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
               icon,
-              color: const Color(0xFF2E7D8A),
+              color: const Color(0xFF1976D2),
               size: 24,
             ),
           ),
@@ -226,7 +226,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
           Switch(
             value: value,
             onChanged: onChanged,
-            activeColor: const Color(0xFF2E7D8A),
+            activeColor: const Color(0xFF1976D2),
           ),
         ],
       ),
@@ -255,7 +255,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -312,7 +312,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               Checkbox(
                 value: true,
                 onChanged: (value) {},
-                activeColor: const Color(0xFF2E7D8A),
+                activeColor: const Color(0xFF1976D2),
               ),
               const Expanded(
                 child: Text('Allow emergency notifications during quiet hours'),
@@ -339,7 +339,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Notification settings reset to defaults'),
-        backgroundColor: Color(0xFF2E7D8A),
+        backgroundColor: Color(0xFF1976D2),
       ),
     );
   }
@@ -349,7 +349,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Notification settings saved successfully'),
-        backgroundColor: Color(0xFF2E7D8A),
+        backgroundColor: Color(0xFF1976D2),
       ),
     );
   }

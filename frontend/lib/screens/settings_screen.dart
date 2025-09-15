@@ -21,7 +21,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
@@ -155,7 +155,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -237,7 +237,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           Switch(
             value: value,
             onChanged: onChanged,
-            activeColor: const Color(0xFF2E7D8A),
+            activeColor: const Color(0xFF1976D2),
           ),
         ],
       ),
@@ -271,7 +271,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Checkbox(
                   value: true,
                   onChanged: notificationsEnabled ? (value) {} : null,
-                  activeColor: const Color(0xFF2E7D8A),
+                  activeColor: const Color(0xFF1976D2),
                 ),
                 Text(type),
               ],
@@ -300,7 +300,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               value: 'High',
               groupValue: 'High',
               onChanged: locationEnabled ? (value) {} : null,
-              activeColor: const Color(0xFF2E7D8A),
+              activeColor: const Color(0xFF1976D2),
             ),
             const Text('High (GPS + Network)'),
           ],
@@ -311,7 +311,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               value: 'Medium',
               groupValue: 'High',
               onChanged: locationEnabled ? (value) {} : null,
-              activeColor: const Color(0xFF2E7D8A),
+              activeColor: const Color(0xFF1976D2),
             ),
             const Text('Medium (Network only)'),
           ],
@@ -337,7 +337,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Checkbox(
               value: true,
               onChanged: autoSync ? (value) {} : null,
-              activeColor: const Color(0xFF2E7D8A),
+              activeColor: const Color(0xFF1976D2),
             ),
             const Text('Sync on WiFi only'),
           ],
@@ -347,7 +347,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Checkbox(
               value: false,
               onChanged: autoSync ? (value) {} : null,
-              activeColor: const Color(0xFF2E7D8A),
+              activeColor: const Color(0xFF1976D2),
             ),
             const Text('Sync on mobile data'),
           ],
@@ -378,7 +378,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   selectedTheme = value!;
                 });
               },
-              activeColor: const Color(0xFF2E7D8A),
+              activeColor: const Color(0xFF1976D2),
             ),
             const Text('Light'),
             const SizedBox(width: 20),
@@ -390,7 +390,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   selectedTheme = value!;
                 });
               },
-              activeColor: const Color(0xFF2E7D8A),
+              activeColor: const Color(0xFF1976D2),
             ),
             const Text('Dark'),
           ],
@@ -439,7 +439,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           children: [
             Icon(
               icon,
-              color: const Color(0xFF2E7D8A),
+              color: const Color(0xFF1976D2),
               size: 24,
             ),
             const SizedBox(width: 12),
@@ -535,7 +535,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Data export started...'),
-        backgroundColor: Color(0xFF2E7D8A),
+        backgroundColor: Color(0xFF1976D2),
       ),
     );
   }
@@ -544,7 +544,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Cache cleared successfully'),
-        backgroundColor: Color(0xFF2E7D8A),
+        backgroundColor: Color(0xFF1976D2),
       ),
     );
   }
@@ -561,7 +561,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Settings reset to default'),
-        backgroundColor: Color(0xFF2E7D8A),
+        backgroundColor: Color(0xFF1976D2),
       ),
     );
   }

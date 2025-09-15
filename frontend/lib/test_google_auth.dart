@@ -26,7 +26,7 @@ class _TestGoogleAuthState extends State<TestGoogleAuth> {
       print('Android Client ID: ${GoogleAuthConfig.androidClientId}');
       print('Web Client ID: ${GoogleAuthConfig.webClientId}');
       print('Server Client ID: ${GoogleAuthConfig.serverClientId}');
-      print('Package Name: com.aarogyarekha.app');
+      print('Package Name: com.flowsafe.app');
       print('SHA-1: 03:BA:58:0D:5B:E6:F0:8B:95:59:AB:3C:CA:5D:1E:05:6E:2E:EA:49');
       
       // Test direct GoogleSignIn initialization
@@ -69,7 +69,7 @@ class _TestGoogleAuthState extends State<TestGoogleAuth> {
                'Android Client ID:\n${GoogleAuthConfig.androidClientId}\n\n'
                'Web Client ID:\n${GoogleAuthConfig.webClientId}\n\n'
                'Server Client ID:\n${GoogleAuthConfig.serverClientId}\n\n'
-               'Package: com.aarogyarekha.app\n\n'
+               'Package: com.flowsafe.app\n\n'
                'SHA-1: 03:BA:58:0D:5B:E6:F0:8B:95:59:AB:3C:CA:5D:1E:05:6E:2E:EA:49';
     });
   }

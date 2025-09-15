@@ -463,7 +463,7 @@ class _RiskMapScreenState extends State<RiskMapScreen> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         elevation: 0,
         actions: [
           IconButton(
@@ -524,7 +524,7 @@ class _RiskMapScreenState extends State<RiskMapScreen> {
                                     _addRiskZones();
                                   });
                                 },
-                                selectedColor: const Color(0xFF2E7D8A),
+                                selectedColor: const Color(0xFF1976D2),
                                 checkmarkColor: Colors.white,
                                 labelStyle: TextStyle(
                                   color: _selectedDisease == disease 
@@ -557,7 +557,7 @@ class _RiskMapScreenState extends State<RiskMapScreen> {
                           _showSatelliteView = value;
                         });
                       },
-                      activeColor: const Color(0xFF2E7D8A),
+                      activeColor: const Color(0xFF1976D2),
                     ),
                     Text(
                       _showSatelliteView ? 'Satellite' : 'Map',
@@ -584,7 +584,7 @@ class _RiskMapScreenState extends State<RiskMapScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF2E7D8A)),
+                          valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF1976D2)),
                         ),
                         SizedBox(height: 16),
                         Text(
@@ -615,7 +615,7 @@ class _RiskMapScreenState extends State<RiskMapScreen> {
                             urlTemplate: _showSatelliteView
                                 ? 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
                                 : 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                            userAgentPackageName: 'com.aarogyarekha.app',
+                            userAgentPackageName: 'com.flowsafe.app',
                             maxZoom: 18,
                           ),
                           

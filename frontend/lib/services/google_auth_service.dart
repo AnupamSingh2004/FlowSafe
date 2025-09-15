@@ -16,7 +16,7 @@ class GoogleAuthService {
       print('Web client ID: ${GoogleAuthConfig.webClientId}');
       print('Android client ID length: ${GoogleAuthConfig.androidClientId.length}');
       print('Web client ID length: ${GoogleAuthConfig.webClientId.length}');
-      print('Package name: com.aarogyarekha.app');
+      print('Package name: com.flowsafe.app');
       print('SHA-1: 03:BA:58:0D:5B:E6:F0:8B:95:59:AB:3C:CA:5D:1E:05:6E:2E:EA:49');
       print('=== END DEBUG ===');
 
@@ -68,7 +68,7 @@ class GoogleAuthService {
                       '2. Package name doesn\'t match\n'
                       '3. Android OAuth client not properly configured\n\n'
                       'Current SHA-1: 03:BA:58:0D:5B:E6:F0:8B:95:59:AB:3C:CA:5D:1E:05:6E:2E:EA:49\n'
-                      'Package: com.aarogyarekha.app\n\n'
+                      'Package: com.flowsafe.app\n\n'
                       'Please verify these match exactly in Google Cloud Console.'
           };
         }

@@ -32,10 +32,10 @@ class GeminiService {
     final locationContext = location != null ? "User location: $location" : "Location not provided";
     
     return """
-You are AarogyaRekha's AI Health Assistant - a specialized preventive healthcare chatbot designed to prevent disease outbreaks before they occur.
+You are FlowSafe's AI Health Assistant - a specialized preventive healthcare chatbot designed to prevent disease outbreaks before they occur.
 
 CONTEXT:
-AarogyaRekha is an AI-powered preventive healthcare system that predicts and alerts communities about potential disease outbreaks like malaria, dengue, diarrhea, and malnutrition using satellite data, climatic patterns, and behavioral insights.
+FlowSafe is an AI-powered preventive healthcare system that predicts and alerts communities about potential disease outbreaks like malaria, dengue, diarrhea, and malnutrition using satellite data, climatic patterns, and behavioral insights.
 
 USER TYPE: $userType
 $locationContext

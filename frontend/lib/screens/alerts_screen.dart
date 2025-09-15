@@ -84,7 +84,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         elevation: 0,
         actions: [
           IconButton(
@@ -113,7 +113,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircularProgressIndicator(
-                    color: Color(0xFF2E7D8A),
+                    color: Color(0xFF1976D2),
                   ),
                   SizedBox(height: 16),
                   Text(
@@ -158,7 +158,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
                       ElevatedButton(
                         onPressed: _loadAlerts,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF2E7D8A),
+                          backgroundColor: const Color(0xFF1976D2),
                           foregroundColor: Colors.white,
                         ),
                         child: const Text('Retry'),
@@ -187,7 +187,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
                           _selectedFilter = filter;
                         });
                       },
-                      selectedColor: const Color(0xFF2E7D8A),
+                      selectedColor: const Color(0xFF1976D2),
                       checkmarkColor: Colors.white,
                       labelStyle: TextStyle(
                         color: _selectedFilter == filter 

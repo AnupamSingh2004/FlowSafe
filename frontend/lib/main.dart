@@ -49,10 +49,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AarogyaRekha',
+      title: 'FlowSafe',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1976D2), // Deep Blue
+        ),
+        primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF1976D2),
+          foregroundColor: Colors.white,
+          elevation: 0,
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          selectedItemColor: Color(0xFF1976D2),
+          unselectedItemColor: Colors.grey,
+          backgroundColor: Colors.white,
+        ),
+        cardTheme: CardThemeData(
+          color: Colors.white,
+          shadowColor: const Color(0xFF1976D2).withOpacity(0.1),
+          elevation: 2,
+        ),
       ),
       home: const AuthWrapper(),
     );

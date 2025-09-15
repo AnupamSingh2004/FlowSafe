@@ -207,7 +207,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
         // App Name
         const Text(
-          'AarogyaRekha',
+          'FlowSafe',
           style: TextStyle(
             color: Colors.white,
             fontSize: 28,
@@ -245,7 +245,7 @@ class _RegisterPageState extends State<RegisterPage> {
         const SizedBox(height: 8),
 
         Text(
-          'Join AarogyaRekha today',
+          'Join FlowSafe today',
           style: TextStyle(
             color: Colors.white.withOpacity(0.9),
             fontSize: 18,
@@ -431,14 +431,14 @@ class _RegisterPageState extends State<RegisterPage> {
       height: 52,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF2E7D8A), Color(0xFF1A5963)],
+          colors: [Color(0xFF1976D2), Color(0xFF1A5963)],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF2E7D8A).withOpacity(0.3),
+            color: const Color(0xFF1976D2).withOpacity(0.3),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),

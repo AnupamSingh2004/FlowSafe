@@ -63,7 +63,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             const SizedBox(width: 12),
             const Text(
-              'AarogyaRekha',
+              'FlowSafe',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -72,7 +72,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
           ],
         ),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         elevation: 0,
         actions: [
           // Satellite Status Indicator
@@ -178,7 +178,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             children: [
               const Icon(
                 Icons.location_on,
-                color: Color(0xFF2E7D8A),
+                color: Color(0xFF1976D2),
                 size: 20,
               ),
               const SizedBox(width: 8),
@@ -187,7 +187,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xFF2E7D8A),
+                  color: Color(0xFF1976D2),
                 ),
               ),
             ],
@@ -208,7 +208,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
-                color: Color(0xFF2E7D8A),
+                color: Color(0xFF1976D2),
               ),
             ),
           const SizedBox(height: 8),
@@ -351,7 +351,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             children: [
               const Icon(
                 Icons.satellite,
-                color: Color(0xFF2E7D8A),
+                color: Color(0xFF1976D2),
                 size: 20,
               ),
               const SizedBox(width: 8),
@@ -360,7 +360,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF2E7D8A),
+                  color: Color(0xFF1976D2),
                 ),
               ),
               const Spacer(),
@@ -693,7 +693,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -941,7 +941,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),

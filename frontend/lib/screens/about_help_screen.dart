@@ -15,7 +15,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('About & Help'),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         foregroundColor: Colors.white,
       ),
       body: Column(
@@ -60,7 +60,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF2E7D8A) : Colors.grey[200],
+          color: isSelected ? const Color(0xFF1976D2) : Colors.grey[200],
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
@@ -99,7 +99,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
           _buildAppInfo(),
           const SizedBox(height: 24),
           
-          // About AarogyaRekha
+          // About FlowSafe
           _buildAboutSection(),
           const SizedBox(height: 24),
           
@@ -155,11 +155,11 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
           const SizedBox(height: 16),
           
           const Text(
-            'AarogyaRekha',
+            'FlowSafe',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 8),
@@ -205,17 +205,17 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'About AarogyaRekha',
+            'About FlowSafe',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 12),
           
           const Text(
-            'AarogyaRekha is an AI-powered preventive healthcare system that predicts and alerts communities about potential disease outbreaks like malaria, dengue, diarrhea, and malnutrition — even before symptoms occur.',
+            'FlowSafe is an AI-powered preventive healthcare system that predicts and alerts communities about potential disease outbreaks like malaria, dengue, diarrhea, and malnutrition — even before symptoms occur.',
             style: TextStyle(
               fontSize: 14,
               height: 1.5,
@@ -228,7 +228,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 8),
@@ -300,7 +300,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -313,12 +313,12 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF2E7D8A).withOpacity(0.1),
+                      color: const Color(0xFF1976D2).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(
                       feature['icon'] as IconData,
-                      color: const Color(0xFF2E7D8A),
+                      color: const Color(0xFF1976D2),
                       size: 24,
                     ),
                   ),
@@ -376,7 +376,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 12),
@@ -427,7 +427,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildHelpSection('Getting Started', [
-            'Welcome to AarogyaRekha! This app helps you stay informed about health risks in your area.',
+            'Welcome to FlowSafe! This app helps you stay informed about health risks in your area.',
             'Select your user type during setup for personalized features.',
             'Enable location services for accurate risk information.',
           ]),
@@ -498,7 +498,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
             style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 12),
@@ -509,7 +509,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('• ', style: TextStyle(color: Color(0xFF2E7D8A))),
+                  const Text('• ', style: TextStyle(color: Color(0xFF1976D2))),
                   Expanded(
                     child: Text(
                       item,
@@ -550,14 +550,14 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 12),
           
-          _buildContactItem(Icons.email, 'Email', 'support@aarogyarekha.in'),
+          _buildContactItem(Icons.email, 'Email', 'support@flowsafe.in'),
           _buildContactItem(Icons.phone, 'Phone', '+91-1800-XXX-XXXX'),
-          _buildContactItem(Icons.language, 'Website', 'www.aarogyarekha.in'),
+          _buildContactItem(Icons.language, 'Website', 'www.flowsafe.in'),
           _buildContactItem(Icons.schedule, 'Support Hours', '24/7 Emergency Support'),
         ],
       ),
@@ -571,7 +571,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
         children: [
           Icon(
             icon,
-            color: const Color(0xFF2E7D8A),
+            color: const Color(0xFF1976D2),
             size: 20,
           ),
           const SizedBox(width: 12),
@@ -602,8 +602,8 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
   Widget _buildFAQContent() {
     final faqs = [
       {
-        'question': 'How does AarogyaRekha predict disease outbreaks?',
-        'answer': 'AarogyaRekha uses satellite data, climate patterns, and AI models to analyze environmental conditions that contribute to disease spread. This includes monitoring water bodies, vegetation, temperature, and humidity patterns.',
+        'question': 'How does FlowSafe predict disease outbreaks?',
+        'answer': 'FlowSafe uses satellite data, climate patterns, and AI models to analyze environmental conditions that contribute to disease spread. This includes monitoring water bodies, vegetation, temperature, and humidity patterns.',
       },
       {
         'question': 'Is my location data secure?',
@@ -623,7 +623,7 @@ class _AboutHelpScreenState extends State<AboutHelpScreen> {
       },
       {
         'question': 'What languages are supported?',
-        'answer': 'AarogyaRekha supports Hindi, English, Bengali, Telugu, Tamil, Marathi, and other regional languages. Voice navigation is available for low-literacy users.',
+        'answer': 'FlowSafe supports Hindi, English, Bengali, Telugu, Tamil, Marathi, and other regional languages. Voice navigation is available for low-literacy users.',
       },
       {
         'question': 'How do I report a suspected outbreak?',

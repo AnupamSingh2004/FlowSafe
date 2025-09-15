@@ -19,7 +19,7 @@ class _GoogleSignInTestPageState extends State<GoogleSignInTestPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Google Sign-In Test'),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         foregroundColor: Colors.white,
       ),
       body: Padding(
@@ -100,7 +100,7 @@ class _GoogleSignInTestPageState extends State<GoogleSignInTestPage> {
                     : const Icon(Icons.login),
                 label: Text(_isLoading ? 'Testing...' : 'Test Google Sign-In'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF2E7D8A),
+                  backgroundColor: const Color(0xFF1976D2),
                   foregroundColor: Colors.white,
                 ),
               ),
@@ -173,7 +173,7 @@ class _GoogleSignInTestPageState extends State<GoogleSignInTestPage> {
                     '3. For physical device: Use your host IP (check terminal output)\n'
                     '4. Make sure Docker backend is running on host machine\n'
                     '5. Set up Google Cloud Console with provided credentials\n'
-                    '6. Package name: com.aarogyarekha.app\n'
+                    '6. Package name: com.flowsafe.app\n'
                     '7. SHA-1: 03:BA:58:0D:5B:E6:F0:8B:95:59:AB:3C:CA:5D:1E:05:6E:2E:EA:49',
                     style: TextStyle(fontSize: 12),
                   ),

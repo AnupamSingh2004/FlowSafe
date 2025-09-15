@@ -50,7 +50,7 @@ class _MainNavigationState extends State<MainNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _selectedIndex == 0 ? null : AppBar(
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         foregroundColor: Colors.white,
         elevation: 0,
         leading: Builder(
@@ -66,7 +66,7 @@ class _MainNavigationState extends State<MainNavigation> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: const Color(0xFF2E7D8A),
+        selectedItemColor: const Color(0xFF1976D2),
         unselectedItemColor: Colors.grey,
         backgroundColor: Colors.white,
         elevation: 8,
@@ -115,8 +115,8 @@ class _MainNavigationState extends State<MainNavigation> {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color(0xFF2E7D8A),
-            Color(0xFF1A5A6B),
+            Color(0xFF1976D2),
+            Color(0xFF1565C0),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -150,7 +150,7 @@ class _MainNavigationState extends State<MainNavigation> {
           const SizedBox(height: 12),
           
           const Text(
-            'AarogyaRekha',
+            'FlowSafe',
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
@@ -200,7 +200,7 @@ class _MainNavigationState extends State<MainNavigation> {
     return ListTile(
       leading: Icon(
         icon,
-        color: const Color(0xFF2E7D8A),
+        color: const Color(0xFF1976D2),
       ),
       title: Text(
         title,

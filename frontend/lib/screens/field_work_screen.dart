@@ -17,7 +17,7 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Field Work'),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         foregroundColor: Colors.white,
       ),
       body: Column(
@@ -60,7 +60,7 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF2E7D8A) : Colors.grey[200],
+          color: isSelected ? const Color(0xFF1976D2) : Colors.grey[200],
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
@@ -120,7 +120,7 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 12),
@@ -128,7 +128,7 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
             children: [
               const Icon(
                 Icons.schedule,
-                color: Color(0xFF2E7D8A),
+                color: Color(0xFF1976D2),
                 size: 20,
               ),
               const SizedBox(width: 8),
@@ -195,7 +195,7 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 12),
@@ -304,7 +304,7 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF2E7D8A),
+                color: Color(0xFF1976D2),
               ),
             ),
           ),
@@ -351,13 +351,13 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF2E7D8A).withOpacity(0.1),
+                  color: const Color(0xFF1976D2).withOpacity(0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
                   visit['time']!,
                   style: const TextStyle(
-                    color: Color(0xFF2E7D8A),
+                    color: Color(0xFF1976D2),
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                   ),
@@ -403,7 +403,7 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
               ElevatedButton(
                 onPressed: () => _startVisit(visit),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF2E7D8A),
+                  backgroundColor: const Color(0xFF1976D2),
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
@@ -454,7 +454,7 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -676,7 +676,7 @@ class _FieldWorkScreenState extends State<FieldWorkScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Starting visit to ${visit['name']}'),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
       ),
     );
   }

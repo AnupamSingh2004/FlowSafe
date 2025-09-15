@@ -19,7 +19,7 @@ class NavigationDemo extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'AarogyaRekha Navigation Demo',
+      title: 'FlowSafe Navigation Demo',
       navigatorKey: NavigationService.navigatorKey,
       theme: ThemeData(
         primarySwatch: Colors.blue,

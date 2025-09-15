@@ -29,7 +29,7 @@ class UserSpecificActions extends StatelessWidget {
             children: [
               const Icon(
                 Icons.dashboard,
-                color: Color(0xFF2E7D8A),
+                color: Color(0xFF1976D2),
                 size: 24,
               ),
               const SizedBox(width: 8),
@@ -38,7 +38,7 @@ class UserSpecificActions extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF2E7D8A),
+                  color: Color(0xFF1976D2),
                 ),
               ),
             ],

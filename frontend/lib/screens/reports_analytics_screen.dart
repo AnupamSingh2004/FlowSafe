@@ -46,7 +46,7 @@ class _ReportsAnalyticsScreenState extends State<ReportsAnalyticsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Reports & Analytics'),
-        backgroundColor: const Color(0xFF2E7D8A),
+        backgroundColor: const Color(0xFF1976D2),
         foregroundColor: Colors.white,
         actions: [
           IconButton(
@@ -108,7 +108,7 @@ class _ReportsAnalyticsScreenState extends State<ReportsAnalyticsScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 12),
@@ -145,14 +145,14 @@ class _ReportsAnalyticsScreenState extends State<ReportsAnalyticsScreen> {
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
-            color: const Color(0xFF2E7D8A).withOpacity(0.1),
+            color: const Color(0xFF1976D2).withOpacity(0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(
             value,
             style: const TextStyle(
               fontSize: 14,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -183,7 +183,7 @@ class _ReportsAnalyticsScreenState extends State<ReportsAnalyticsScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -258,7 +258,7 @@ class _ReportsAnalyticsScreenState extends State<ReportsAnalyticsScreen> {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -529,7 +529,7 @@ class _ReportsAnalyticsScreenState extends State<ReportsAnalyticsScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -718,7 +718,7 @@ class _ReportsAnalyticsScreenState extends State<ReportsAnalyticsScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),
@@ -760,7 +760,7 @@ class _ReportsAnalyticsScreenState extends State<ReportsAnalyticsScreen> {
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2E7D8A),
+              color: Color(0xFF1976D2),
             ),
           ),
           const SizedBox(height: 16),

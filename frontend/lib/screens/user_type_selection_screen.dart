@@ -11,8 +11,8 @@ class UserTypeSelectionScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xFF2E7D8A),
-              Color(0xFF1A5A6B),
+              Color(0xFF1976D2),
+              Color(0xFF1565C0),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -52,7 +52,7 @@ class UserTypeSelectionScreen extends StatelessWidget {
                 
                 // App Title
                 const Text(
-                  'AarogyaRekha',
+                  'FlowSafe',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 32,
@@ -162,7 +162,7 @@ class UserTypeSelectionScreen extends StatelessWidget {
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.white,
-          foregroundColor: const Color(0xFF2E7D8A),
+          foregroundColor: const Color(0xFF1976D2),
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -175,12 +175,12 @@ class UserTypeSelectionScreen extends StatelessWidget {
               width: 50,
               height: 50,
               decoration: BoxDecoration(
-                color: const Color(0xFF2E7D8A).withOpacity(0.1),
+                color: const Color(0xFF1976D2).withOpacity(0.1),
                 borderRadius: BorderRadius.circular(25),
               ),
               child: Icon(
                 icon,
-                color: const Color(0xFF2E7D8A),
+                color: const Color(0xFF1976D2),
                 size: 24,
               ),
             ),
