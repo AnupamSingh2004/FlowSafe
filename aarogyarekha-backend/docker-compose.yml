@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: aarogyarekha_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    networks:
+      - aarogyarekha_network
+
+  web:
+    build: .
+    container_name: aarogyarekha_web
+    restart: always
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+      - static_volume:/app/static
+      - media_volume:/app/media
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+    env_file:
+      - .env
+    networks:
+      - aarogyarekha_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: aarogyarekha_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - aarogyarekha_network
+
+  prediction-service:
+    build: ./disease_prediction
+    container_name: aarogyarekha_prediction
+    restart: always
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./disease_prediction:/app
+    environment:
+      - DEBUG=${DEBUG:-False}
+      - FLASK_ENV=${FLASK_ENV:-production}
+    depends_on:
+      - web
+    networks:
+      - aarogyarekha_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+
+networks:
+  aarogyarekha_network:
+    driver: bridge
