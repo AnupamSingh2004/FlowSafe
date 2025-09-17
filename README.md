@@ -1,4 +1,4 @@
-# FlowSafe ��🛡️
+# FlowSafe 
 ### *Smart Health Surveillance and Early Warning System for Water-borne Diseases*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -11,7 +11,7 @@
 [![AI/ML](https://img.shields.io/badge/AI%2FML-XGBoost-orange.svg)](https://xgboost.ai/)
 [![Water Quality](https://img.shields.io/badge/Water%20Quality-IoT%20Ready-blue.svg)](https://www.who.int/news-room/fact-sheets/detail/drinking-water)
 
-## 🎯 Overview
+## Overview
 
 FlowSafe is an AI-powered Smart Health Surveillance and Early Warning System specifically designed to detect, monitor, and prevent outbreaks of water-borne diseases in vulnerable communities, particularly in rural areas and tribal belts of the Northeastern Region (NER).
 
@@ -19,7 +19,7 @@ The system combines water quality monitoring, disease surveillance, community re
 
 By integrating IoT sensors, mobile health reporting, and AI-based outbreak prediction, FlowSafe empowers health workers, community volunteers, and local governance bodies to take proactive measures before outbreaks occur.
 
-## 🎥 Demo Video
+## Demo Video
 
 
 
@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 
 
 
-## 📱 Screenshots
+## Screenshots
 
 ### Mobile App Interface
 
