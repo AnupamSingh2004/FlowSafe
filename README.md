@@ -1,4 +1,4 @@
-# FlowSafe ��🛡️
+# FlowSafe 
 ### *Smart Health Surveillance and Early Warning System for Water-borne Diseases*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -11,7 +11,7 @@
 [![AI/ML](https://img.shields.io/badge/AI%2FML-XGBoost-orange.svg)](https://xgboost.ai/)
 [![Water Quality](https://img.shields.io/badge/Water%20Quality-IoT%20Ready-blue.svg)](https://www.who.int/news-room/fact-sheets/detail/drinking-water)
 
-## 🎯 Overview
+## Overview
 
 FlowSafe is an AI-powered Smart Health Surveillance and Early Warning System specifically designed to detect, monitor, and prevent outbreaks of water-borne diseases in vulnerable communities, particularly in rural areas and tribal belts of the Northeastern Region (NER).
 
@@ -19,7 +19,7 @@ The system combines water quality monitoring, disease surveillance, community re
 
 By integrating IoT sensors, mobile health reporting, and AI-based outbreak prediction, FlowSafe empowers health workers, community volunteers, and local governance bodies to take proactive measures before outbreaks occur.
 
-## 🎥 Demo Video
+## Demo Video
 
 
 
@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 
 
 
-## 📱 Screenshots
+## Screenshots
 
 ### Mobile App Interface
 
@@ -68,60 +68,60 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 
 
 
-## 🌟 Key Features
+## Key Features
 
-### 💧 Water Quality Monitoring
+### Water Quality Monitoring
 - **Real-time water testing** with IoT sensor integration
 - **Manual test kit support** for pH, turbidity, TDS, bacterial count
 - **Water source tracking** (Borewell, Hand Pump, Community Well, etc.)
 - **Quality assessment** with color-coded indicators and treatment recommendations
 - **GPS-based location tagging** for contamination source mapping
 
-### 🏥 Disease Surveillance & Early Warning
+### Disease Surveillance & Early Warning
 - **Water-borne disease tracking** (Diarrhea, Cholera, Typhoid, Hepatitis A)
 - **AI-powered outbreak prediction** with risk scoring algorithms
 - **Symptom correlation** with water source contamination
 - **Patient demographics** and disease severity assessment
 - **Automatic health authority alerts** for high-risk cases
 
-### 🎓 Educational & Awareness Modules
+### Educational & Awareness Modules
 - **Interactive hygiene education** with multi-lesson format
 - **Safe water practices** and purification methods training
 - **Disease prevention techniques** and emergency response
 - **Community health best practices** and traditional medicine integration
 - **Progress tracking** for educational module completion
 
-### 🌍 Multilingual Support
+### Multilingual Support
 - **6 Regional languages** including tribal languages (Hindi, Bengali, Assamese, Nepali, Manipuri)
 - **Localized health content** with cultural sensitivity
 - **Voice-based navigation** for low-literacy users
 - **Community reporting** in preferred languages
 
-### � Offline Functionality
+### Offline Functionality
 - **Offline data collection** for remote areas with poor connectivity
 - **Automatic sync** when internet becomes available
 - **Data persistence** with local storage and queue management
 - **Sync status tracking** with detailed progress indicators
 
-### 🚨 Smart Alert System
+### Smart Alert System
 - **Risk-based notifications** with automatic outbreak detection
 - **Multi-channel alerts** to health workers and governance bodies
 - **Community broadcast** for preventive measure announcements
 - **Emergency contact integration** for rapid response
 
-## 🎯 Target Audience
+## Target Audience
 
 | User Group | Purpose Served |
 |------------|----------------|
-| 🧑‍⚕️ **ASHA/ANM Workers** | Report water-borne disease cases, monitor water quality, and educate communities on prevention |
-| 🏥 **Primary Health Centers (PHCs)** | Receive early outbreak alerts, track disease patterns, and coordinate rapid response |
-| 👨‍👩‍👧 **Rural & Tribal Communities** | Access multilingual health education, report water quality issues, and receive preventive care guidance |
-| 🌊 **Community Volunteers** | Conduct water quality testing, report contamination, and support health surveillance activities |
-| 🏛️ **Local Governance Bodies** | Monitor district-level health trends, allocate resources, and implement preventive interventions |
-| 🚰 **Water & Sanitation Departments** | Track water source contamination, prioritize infrastructure improvements, and ensure safe water supply |
-| 🏛️ **District Officials** | Evidence-based planning and resource allocation |
+|  **ASHA/ANM Workers** | Report water-borne disease cases, monitor water quality, and educate communities on prevention |
+|  **Primary Health Centers (PHCs)** | Receive early outbreak alerts, track disease patterns, and coordinate rapid response |
+|  **Rural & Tribal Communities** | Access multilingual health education, report water quality issues, and receive preventive care guidance |
+|  **Community Volunteers** | Conduct water quality testing, report contamination, and support health surveillance activities |
+|  **Local Governance Bodies** | Monitor district-level health trends, allocate resources, and implement preventive interventions |
+|  **Water & Sanitation Departments** | Track water source contamination, prioritize infrastructure improvements, and ensure safe water supply |
+|  **District Officials** | Evidence-based planning and resource allocation |
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend (Mobile App)
 - **Flutter** 3.8.1 - Cross-platform mobile development
@@ -157,7 +157,7 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 - **Google Earth Engine** - Watershed analysis
 - **NASA FIRMS** - Water contamination tracking
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Flutter SDK 3.8.1 or higher
@@ -222,7 +222,7 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
    flutter run
    ```
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 aarogyarekha/
@@ -249,7 +249,7 @@ aarogyarekha/
 └── README.md              # This file
 ```
 
-## 🌐 API Documentation
+## API Documentation
 
 ### Authentication Endpoints
 - `POST /api/auth/login/` - User login
@@ -271,7 +271,7 @@ aarogyarekha/
 - `GET /api/user/prescriptions/` - Get user prescriptions
 - `POST /api/user/prescriptions/` - Add new prescription
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -316,7 +316,7 @@ API_BASE_URL=http://localhost:8000/api/
 GOOGLE_OAUTH_CLIENT_ID=your-google-oauth-client-id
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Backend Tests
 ```bash
@@ -336,7 +336,7 @@ cd frontend
 flutter drive --target=test_driver/app.dart
 ```
 
-## 📊 ML Model Training
+## ML Model Training
 
 ### Water-borne Disease Prediction Model
 ```bash
@@ -350,7 +350,7 @@ cd disease_prediction
 python process_water_quality_data.py --region "Northeastern Region" --start-date 2023-01-01 --end-date 2023-12-31
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Backend Deployment (Docker)
 ```bash
@@ -366,7 +366,7 @@ flutter build apk --release
 flutter build ios --release
 ```
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
@@ -382,7 +382,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - Follow [PEP 8](https://www.python.org/dev/peps/pep-0008/) for Python code
 - Use meaningful commit messages
 
-## 📋 Roadmap
+## Roadmap
 
 ### Phase 1 - Data Integration ✅
 - [x] Satellite data collection pipeline
@@ -416,17 +416,17 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 
 
-## 🎁 Benefits at a Glance
+## Benefits at a Glance
 
 | Benefit | Impact |
 |---------|--------|
-| 🎯 **Predict Before It Spreads** | Prevents outbreaks at early stages |
-| 🧑‍⚕️ **Empowers Grassroot Health Workers** | Reduces manual workload & improves focus |
-| 💰 **Saves Medical Costs** | Cheaper than treating full-blown outbreaks |
-| 🚨 **Quick Community Awareness** | Smart alerts prevent panic and misinformation |
-| 📡 **Evidence-Based Planning** | Satellite + AI combo gives strong backend support |
+| **Predict Before It Spreads** | Prevents outbreaks at early stages |
+| **Empowers Grassroot Health Workers** | Reduces manual workload & improves focus |
+| **Saves Medical Costs** | Cheaper than treating full-blown outbreaks |
+| **Quick Community Awareness** | Smart alerts prevent panic and misinformation |
+| **Evidence-Based Planning** | Satellite + AI combo gives strong backend support |
 
-### 🏆 Smart India Hackathon Achievement
+### Smart India Hackathon Achievement
 **FlowSafe** was developed for the **Smart India Hackathon**, showcasing innovative solutions for water-borne disease prevention through AI, IoT sensors, and satellite technology. Our team collaborated intensively to create this comprehensive water quality monitoring and disease surveillance system that addresses critical water-related health challenges in India's Northeastern Region.
 
 ---
