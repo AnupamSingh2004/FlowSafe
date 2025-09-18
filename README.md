@@ -34,8 +34,6 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 
 [Click here to view the presentation](https://docs.google.com/presentation/d/15ZrNp3PPfow25XWRmxWCd0ObyUBhTON5wkk3iI3HX6g/edit?usp=sharing)
 
-![WhatsApp Image 2025-09-18 at 7 30 16 PM](https://github.com/user-attachments/assets/aa2cb191-bbd4-40ca-99d8-e345fb6aedab)
-
 ## Screenshots
 
 ### Mobile App Interface
