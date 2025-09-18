@@ -10,14 +10,18 @@
 [![Healthcare](https://img.shields.io/badge/Healthcare-AI%20Powered-red.svg)](https://www.who.int/)
 [![AI/ML](https://img.shields.io/badge/AI%2FML-XGBoost-orange.svg)](https://xgboost.ai/)
 [![Water Quality](https://img.shields.io/badge/Water%20Quality-IoT%20Ready-blue.svg)](https://www.who.int/news-room/fact-sheets/detail/drinking-water)
+[![Analytics](https://img.shields.io/badge/Analytics-fl__chart-blue.svg)](https://pub.dev/packages/fl_chart)
+[![Emergency](https://img.shields.io/badge/Emergency-Real%20Time-red.svg)](https://flutter.dev/)
 
 ## Overview
 
-FlowSafe is an AI-powered Smart Health Surveillance and Early Warning System specifically designed to detect, monitor, and prevent outbreaks of water-borne diseases in vulnerable communities, particularly in rural areas and tribal belts of the Northeastern Region (NER).
+FlowSafe is a comprehensive AI-powered Smart Health Surveillance and Early Warning System designed to detect, monitor, and prevent outbreaks of water-borne diseases in vulnerable communities, particularly in rural areas and tribal belts of the Northeastern Region (NER).
 
-The system combines water quality monitoring, disease surveillance, community reporting, and educational modules to create a comprehensive solution for water-borne disease prevention including **Diarrhea, Cholera, Typhoid, Hepatitis A, and Dysentery**.
+The system combines advanced water quality monitoring, comprehensive health data collection, emergency reporting, real-time analytics, disease surveillance, community reporting, and educational modules to create a complete solution for water-borne disease prevention including **Diarrhea, Cholera, Typhoid, Hepatitis A, and Dysentery**.
 
-By integrating IoT sensors, mobile health reporting, and AI-based outbreak prediction, FlowSafe empowers health workers, community volunteers, and local governance bodies to take proactive measures before outbreaks occur.
+**New in 2025**: FlowSafe now features a complete **Health Data Collection Ecosystem** with dedicated interfaces for ASHA workers, community volunteers, and local clinics, comprehensive **Emergency Reporting System**, advanced **Analytics Dashboards** with interactive charts, and **Field Survey Management** capabilities.
+
+By integrating IoT sensors, mobile health reporting, AI-based outbreak prediction, comprehensive data analytics, and emergency response systems, FlowSafe empowers health workers, community volunteers, and local governance bodies to take proactive measures before outbreaks occur.
 
 ## Demo Video
 
@@ -70,92 +74,160 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 
 ## Key Features
 
-### Water Quality Monitoring
-- **Real-time water testing** with IoT sensor integration
-- **Manual test kit support** for pH, turbidity, TDS, bacterial count
-- **Water source tracking** (Borewell, Hand Pump, Community Well, etc.)
+### 🚨 Emergency Reporting System *[New]*
+- **Critical Health Incidents** - Immediate reporting of disease outbreaks, water contamination, and medical emergencies
+- **Real-time Alert Distribution** - Instant notifications to health authorities and emergency responders  
+- **Severity Assessment** - Automated risk scoring with color-coded priority levels
+- **Contact Management** - Direct integration with emergency services and health departments
+- **Incident Tracking** - Complete audit trail from report to resolution
+- **Geographic Mapping** - GPS-based incident location for rapid response coordination
+
+### 📊 Comprehensive Health Data Collection Hub *[New]*
+- **Field Survey Management** - Door-to-door household health surveys with demographic tracking
+- **Health Camp Data Collection** - Medical camp organization, patient statistics, and service delivery tracking
+- **ASHA Worker Interface** - Specialized tools for community health workers with simplified data entry
+- **Volunteer Data Collection** - Community volunteer interface for health data gathering and awareness campaigns
+- **Clinic Data Integration** - Local health clinic data collection with patient management capabilities
+- **Role-based Access Control** - Customized interfaces based on user type (ASHA, Volunteer, Clinic Staff)
+
+### 📈 Advanced Analytics Dashboard *[New]*
+- **Interactive Charts & Graphs** - Real-time data visualization using fl_chart library
+- **Trend Analysis** - Monthly, weekly, and daily health trend monitoring
+- **Survey Analytics** - Completion rates, demographic analysis, and geographic distribution
+- **Health Indicator Tracking** - Progress monitoring for vaccination, sanitation, and water access
+- **Performance Metrics** - Key performance indicators for health programs and interventions
+- **Predictive Analytics** - AI-powered forecasting for disease outbreaks and resource planning
+
+### 💧 Water Quality Monitoring
+- **Real-time water testing** with IoT sensor integration and advanced analytics visualization
+- **Manual test kit support** for pH, turbidity, TDS, bacterial count with trend analysis
+- **Water source tracking** (Borewell, Hand Pump, Community Well, etc.) with historical data
 - **Quality assessment** with color-coded indicators and treatment recommendations
 - **GPS-based location tagging** for contamination source mapping
+- **Interactive Water Quality Trends** - Line charts showing pH levels, turbidity, and bacterial contamination over time
+- **Safety Level Distribution** - Pie charts showing percentage of safe vs. contaminated water sources
+- **Weekly Testing Activity** - Bar charts tracking daily water quality tests and violations
 
-### Disease Surveillance & Early Warning
-- **Water-borne disease tracking** (Diarrhea, Cholera, Typhoid, Hepatitis A)
-- **AI-powered outbreak prediction** with risk scoring algorithms
-- **Symptom correlation** with water source contamination
-- **Patient demographics** and disease severity assessment
-- **Automatic health authority alerts** for high-risk cases
+### 🔬 Disease Surveillance & Early Warning
+- **Water-borne disease tracking** (Diarrhea, Cholera, Typhoid, Hepatitis A) with statistical analysis
+- **AI-powered outbreak prediction** with risk scoring algorithms and trend forecasting
+- **Symptom correlation** with water source contamination using advanced analytics
+- **Patient demographics** and disease severity assessment with visual reporting
+- **Automatic health authority alerts** for high-risk cases with emergency escalation
+- **Outbreak Pattern Recognition** - Machine learning models for early detection
 
-### Educational & Awareness Modules
-- **Interactive hygiene education** with multi-lesson format
-- **Safe water practices** and purification methods training
-- **Disease prevention techniques** and emergency response
+### 📋 Field Survey & Data Collection *[Enhanced]*
+- **Household Information Management** - Complete family composition tracking with age group analysis
+- **Socio-Economic Data Collection** - Income, education, and living condition assessment
+- **Infrastructure Assessment** - Water access, sanitation, electricity availability tracking
+- **Health Status Monitoring** - Vaccination status, chronic diseases, and special care needs
+- **Survey Type Categorization** - Door-to-door, community assessment, disease surveillance, nutrition surveys
+- **Progress Tracking** - Survey completion rates and data quality metrics
+
+### 🎓 Educational & Awareness Modules
+- **Interactive hygiene education** with multi-lesson format and progress analytics
+- **Safe water practices** and purification methods training with effectiveness tracking
+- **Disease prevention techniques** and emergency response with completion metrics
 - **Community health best practices** and traditional medicine integration
-- **Progress tracking** for educational module completion
+- **Progress tracking** for educational module completion with detailed analytics
 
-### Multilingual Support
+### 🌐 Multilingual Support
 - **6 Regional languages** including tribal languages (Hindi, Bengali, Assamese, Nepali, Manipuri)
-- **Localized health content** with cultural sensitivity
-- **Voice-based navigation** for low-literacy users
-- **Community reporting** in preferred languages
+- **Localized health content** with cultural sensitivity and regional customization
+- **Voice-based navigation** for low-literacy users with audio support
+- **Community reporting** in preferred languages with translation capabilities
 
-### Offline Functionality
-- **Offline data collection** for remote areas with poor connectivity
-- **Automatic sync** when internet becomes available
-- **Data persistence** with local storage and queue management
-- **Sync status tracking** with detailed progress indicators
+### 📱 Offline Functionality
+- **Offline data collection** for remote areas with poor connectivity and automatic queuing
+- **Automatic sync** when internet becomes available with progress indicators
+- **Data persistence** with local storage and queue management using SharedPreferences
+- **Sync status tracking** with detailed progress indicators and conflict resolution
 
-### Smart Alert System
-- **Risk-based notifications** with automatic outbreak detection
-- **Multi-channel alerts** to health workers and governance bodies
-- **Community broadcast** for preventive measure announcements
-- **Emergency contact integration** for rapid response
+### 🚨 Smart Alert System
+- **Risk-based notifications** with automatic outbreak detection and severity assessment
+- **Multi-channel alerts** to health workers and governance bodies with customizable routing
+- **Community broadcast** for preventive measure announcements with targeted messaging
+- **Emergency contact integration** for rapid response with automated escalation
+- **Alert Analytics** - Track alert effectiveness and response times
 
 ## Target Audience
 
-| User Group | Purpose Served |
-|------------|----------------|
-|  **ASHA/ANM Workers** | Report water-borne disease cases, monitor water quality, and educate communities on prevention |
-|  **Primary Health Centers (PHCs)** | Receive early outbreak alerts, track disease patterns, and coordinate rapid response |
-|  **Rural & Tribal Communities** | Access multilingual health education, report water quality issues, and receive preventive care guidance |
-|  **Community Volunteers** | Conduct water quality testing, report contamination, and support health surveillance activities |
-|  **Local Governance Bodies** | Monitor district-level health trends, allocate resources, and implement preventive interventions |
-|  **Water & Sanitation Departments** | Track water source contamination, prioritize infrastructure improvements, and ensure safe water supply |
-|  **District Officials** | Evidence-based planning and resource allocation |
+| User Group | Purpose Served | New Features |
+|------------|----------------|---------------|
+|  **ASHA/ANM Workers** | Report water-borne disease cases, monitor water quality, and educate communities on prevention | Dedicated interface, field survey tools, health camp data collection |
+|  **Primary Health Centers (PHCs)** | Receive early outbreak alerts, track disease patterns, and coordinate rapid response | Emergency reporting system, advanced analytics dashboard, real-time monitoring |
+|  **Rural & Tribal Communities** | Access multilingual health education, report water quality issues, and receive preventive care guidance | Emergency incident reporting, community health surveys, offline data collection |
+|  **Community Volunteers** | Conduct water quality testing, report contamination, and support health surveillance activities | Volunteer-specific interface, simplified data entry, progress tracking |
+|  **Local Governance Bodies** | Monitor district-level health trends, allocate resources, and implement preventive interventions | Comprehensive analytics, trend forecasting, resource allocation insights |
+|  **Water & Sanitation Departments** | Track water source contamination, prioritize infrastructure improvements, and ensure safe water supply | Interactive water quality charts, contamination mapping, testing activity monitoring |
+|  **District Officials** | Evidence-based planning and resource allocation | Advanced reporting, predictive analytics, emergency response coordination |
+|  **Local Clinics** | Patient data management, health service delivery tracking | Clinic-specific data collection interface, patient statistics, service monitoring |
 
 ## Technology Stack
 
 ### Frontend (Mobile App)
-- **Flutter** 3.8.1 - Cross-platform mobile development
-- **Dart** - Programming language for Flutter
+
+- **Flutter** 3.8.1 - Cross-platform mobile development framework
+- **Dart** 3.8.1 - Programming language for Flutter applications
+- **fl_chart** 0.68.0 - Advanced charting library for analytics dashboards
 - **Google Maps API** - Interactive maps and location services
-- **Firebase** - Authentication and real-time database
+- **Google Sign-In** 6.1.5 - OAuth authentication integration
+- **Shared Preferences** 2.2.2 - Local data storage and offline sync
+- **Flutter Secure Storage** 10.0.0 - Secure token and sensitive data storage
+- **Provider** 6.1.1 - State management and data flow
+- **HTTP** 1.1.0 - API communication and data synchronization
+- **Geolocator** 14.0.2 - GPS location services and tracking
+- **Image Picker** 1.0.4 - Camera and gallery integration
 
 ### Backend
-- **Django** 4.2 - Web framework
-- **Python** 3.11 - Backend programming
-- **PostgreSQL** - Primary database
-- **Redis** - Caching and session management
-- **Celery** - Asynchronous task processing
+
+- **Django** 4.2 - Web framework and REST API development
+- **Python** 3.11 - Backend programming language
+- **PostgreSQL** - Primary database for data persistence
+- **Redis** - Caching, session management, and real-time data
+- **Celery** - Asynchronous task processing and background jobs
+- **Django REST Framework** - API development and serialization
+- **Django CORS Headers** - Cross-origin resource sharing
 
 ### AI/ML & Prediction
-- **XGBoost** - Water-borne disease prediction models
-- **TensorFlow** - Epidemic pattern recognition
-- **OpenCV** - Water quality image analysis
-- **NumPy & Pandas** - Environmental data processing
-- **Scikit-learn** - Risk assessment algorithms
+
+- **XGBoost** - Water-borne disease prediction models and risk assessment
+- **TensorFlow** - Epidemic pattern recognition and deep learning
+- **OpenCV** - Water quality image analysis and computer vision
+- **NumPy & Pandas** - Environmental data processing and analytics
+- **Scikit-learn** - Risk assessment algorithms and machine learning
+- **Matplotlib & Seaborn** - Data visualization and statistical analysis
+
+### Analytics & Visualization
+
+- **fl_chart** - Interactive charts (Line, Bar, Pie charts)
+- **Data Analytics Engine** - Real-time trend analysis and forecasting
+- **Statistical Processing** - Health indicator tracking and performance metrics
+- **Dashboard Components** - Custom analytics widgets and visualizations
 
 ### IoT & Water Monitoring
+
 - **Arduino/ESP32** - Water quality sensors integration
-- **pH Sensors** - Water acidity measurement
+- **pH Sensors** - Water acidity measurement and monitoring
 - **TDS Meters** - Total dissolved solids detection
 - **Turbidity Sensors** - Water clarity assessment
-- **Temperature Sensors** - Thermal monitoring
+- **Temperature Sensors** - Thermal monitoring and environmental tracking
+- **IoT Data Pipeline** - Real-time sensor data processing
 
 ### Satellite Data & APIs
-- **MODIS** - Water body monitoring and climate data
+
+- **MODIS** - Water body monitoring and climate data analysis
 - **ISRO Bhuvan** - Water resources satellite imagery
-- **OpenWeatherMap** - Rainfall and humidity data
-- **Google Earth Engine** - Watershed analysis
-- **NASA FIRMS** - Water contamination tracking
+- **OpenWeatherMap** - Rainfall and humidity data integration
+- **Google Earth Engine** - Watershed analysis and environmental monitoring
+- **NASA FIRMS** - Water contamination tracking and detection
+
+### Emergency & Communication
+
+- **Real-time Notification System** - Push notifications and alerts
+- **Emergency Response Integration** - Direct communication with health authorities
+- **SMS/Email Integration** - Multi-channel alert distribution
+- **Geographic Information System** - Location-based emergency response
 
 ## Quick Start
 
@@ -258,18 +330,45 @@ aarogyarekha/
 - `POST /api/auth/google/` - Google OAuth login
 
 ### Water Quality & Disease Prediction Endpoints
+
 - `POST /api/water-quality/report/` - Submit water quality test results
 - `GET /api/water-quality/reports/` - Get water quality history
+- `GET /api/water-quality/analytics/` - Get water quality analytics and trends
 - `POST /api/predict/waterborne-disease/` - Get disease risk prediction
 - `GET /api/disease-surveillance/area/{location}/` - Get area disease monitoring data
 - `GET /api/alerts/waterborne/` - Get water-related health alerts
 - `POST /api/alerts/mark-read/` - Mark alerts as read
 
+### Health Data Collection Endpoints *[New]*
+
+- `POST /api/health-data/field-survey/` - Submit field survey data
+- `GET /api/health-data/field-surveys/` - Get field survey history
+- `POST /api/health-data/health-camp/` - Submit health camp data
+- `GET /api/health-data/health-camps/` - Get health camp records
+- `POST /api/health-data/asha-report/` - Submit ASHA worker data
+- `GET /api/health-data/asha-reports/` - Get ASHA worker reports
+- `POST /api/health-data/volunteer-data/` - Submit volunteer collected data
+- `GET /api/health-data/volunteer-reports/` - Get volunteer data history
+- `POST /api/health-data/clinic-data/` - Submit clinic data
+- `GET /api/health-data/clinic-reports/` - Get clinic data records
+- `GET /api/health-data/analytics/` - Get comprehensive health data analytics
+
+### Emergency Reporting Endpoints *[New]*
+
+- `POST /api/emergency/report/` - Submit emergency health incident
+- `GET /api/emergency/reports/` - Get emergency reports history
+- `PUT /api/emergency/update-status/{id}/` - Update emergency report status
+- `GET /api/emergency/active/` - Get active emergency incidents
+- `POST /api/emergency/escalate/{id}/` - Escalate emergency to higher authorities
+- `GET /api/emergency/analytics/` - Get emergency response analytics
+
 ### User Management Endpoints
+
 - `GET /api/user/profile/` - Get user profile
 - `PUT /api/user/profile/` - Update user profile
 - `GET /api/user/prescriptions/` - Get user prescriptions
 - `POST /api/user/prescriptions/` - Add new prescription
+- `GET /api/user/dashboard-stats/` - Get user-specific dashboard statistics
 
 ## Configuration
 

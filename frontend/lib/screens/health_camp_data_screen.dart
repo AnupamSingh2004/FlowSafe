@@ -158,34 +158,42 @@ class _HealthCampDataScreenState extends State<HealthCampDataScreen> {
                     Row(
                       children: [
                         Expanded(
+                          flex: 2,
                           child: TextFormField(
                             controller: _campIdController,
                             decoration: const InputDecoration(
                               labelText: 'Camp ID',
-                              prefixIcon: Icon(Icons.tag),
+                              prefixIcon: Icon(Icons.tag, size: 18),
+                              labelStyle: TextStyle(fontSize: 12),
                             ),
+                            style: const TextStyle(fontSize: 12),
                             validator: (value) {
                               if (value?.isEmpty ?? true) {
-                                return 'Camp ID is required';
+                                return 'Required';
                               }
                               return null;
                             },
                           ),
                         ),
-                        const SizedBox(width: 16),
+                        const SizedBox(width: 10),
                         Expanded(
+                          flex: 3,
                           child: DropdownButtonFormField<String>(
                             value: _campType,
+                            isExpanded: true,
                             decoration: const InputDecoration(
                               labelText: 'Camp Type',
-                              prefixIcon: Icon(Icons.medical_services),
+                              prefixIcon: Icon(Icons.medical_services, size: 18),
+                              labelStyle: TextStyle(fontSize: 12),
+                              contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                              isDense: true,
                             ),
                             items: _campTypes.map((type) {
                               return DropdownMenuItem(
                                 value: type,
                                 child: Text(
                                   type, 
-                                  style: const TextStyle(fontSize: 11),
+                                  style: const TextStyle(fontSize: 10),
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 1,
                                 ),
@@ -215,56 +223,57 @@ class _HealthCampDataScreenState extends State<HealthCampDataScreen> {
                       },
                     ),
                     const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: TextFormField(
-                            controller: _locationController,
-                            decoration: const InputDecoration(
-                              labelText: 'Location/Venue',
-                              prefixIcon: Icon(Icons.location_on),
-                            ),
-                            validator: (value) {
-                              if (value?.isEmpty ?? true) {
-                                return 'Location is required';
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: DropdownButtonFormField<String>(
-                            value: _areaType,
-                            decoration: const InputDecoration(
-                              labelText: 'Area Type',
-                              prefixIcon: Icon(Icons.location_city),
-                            ),
-                            items: _areaTypes.map((area) {
-                              return DropdownMenuItem(
-                                value: area,
-                                child: Text(area),
-                              );
-                            }).toList(),
-                            onChanged: (value) {
-                              setState(() {
-                                _areaType = value!;
-                              });
-                            },
-                          ),
-                        ),
-                      ],
+                    TextFormField(
+                      controller: _locationController,
+                      decoration: const InputDecoration(
+                        labelText: 'Location/Venue',
+                        prefixIcon: Icon(Icons.location_on, size: 20),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                        isDense: true,
+                      ),
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
+                          return 'Location is required';
+                        }
+                        return null;
+                      },
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 12),
+                    DropdownButtonFormField<String>(
+                      value: _areaType,
+                      decoration: const InputDecoration(
+                        labelText: 'Area Type',
+                        prefixIcon: Icon(Icons.location_city, size: 20),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                        isDense: true,
+                      ),
+                      items: _areaTypes.map((area) {
+                        return DropdownMenuItem(
+                          value: area,
+                          child: Text(
+                            area,
+                            style: const TextStyle(fontSize: 14),
+                          ),
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _areaType = value!;
+                        });
+                      },
+                    ),
+                    const SizedBox(height: 12),
                     TextFormField(
                       controller: _organizerController,
                       decoration: const InputDecoration(
                         labelText: 'Organizing Institution',
-                        prefixIcon: Icon(Icons.business),
+                        prefixIcon: Icon(Icons.business, size: 20),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                        isDense: true,
                       ),
                       validator: (value) {
                         if (value?.isEmpty ?? true) {
-                          return 'Organizer information is required';
+                          return 'Organizer required';
                         }
                         return null;
                       },

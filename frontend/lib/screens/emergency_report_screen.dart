@@ -172,19 +172,22 @@ class _EmergencyReportScreenState extends State<EmergencyReportScreen> {
                     Row(
                       children: [
                         Expanded(
+                          flex: 3,
                           child: DropdownButtonFormField<String>(
                             value: _emergencyType,
                             decoration: const InputDecoration(
                               labelText: 'Emergency Type *',
-                              prefixIcon: Icon(Icons.warning),
+                              prefixIcon: Icon(Icons.warning, size: 18),
+                              labelStyle: TextStyle(fontSize: 11),
                             ),
                             items: _emergencyTypes.map((type) {
                               return DropdownMenuItem(
                                 value: type,
                                 child: Text(
                                   type,
-                                  style: const TextStyle(fontSize: 12),
+                                  style: const TextStyle(fontSize: 10),
                                   overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
                                 ),
                               );
                             }).toList(),
@@ -195,13 +198,15 @@ class _EmergencyReportScreenState extends State<EmergencyReportScreen> {
                             },
                           ),
                         ),
-                        const SizedBox(width: 16),
+                        const SizedBox(width: 10),
                         Expanded(
+                          flex: 2,
                           child: DropdownButtonFormField<String>(
                             value: _severity,
                             decoration: const InputDecoration(
-                              labelText: 'Severity Level *',
-                              prefixIcon: Icon(Icons.priority_high),
+                              labelText: 'Severity *',
+                              prefixIcon: Icon(Icons.priority_high, size: 18),
+                              labelStyle: TextStyle(fontSize: 11),
                             ),
                             items: _severityLevels.map((level) {
                               return DropdownMenuItem(
@@ -209,7 +214,7 @@ class _EmergencyReportScreenState extends State<EmergencyReportScreen> {
                                 child: Text(
                                   level,
                                   style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 10,
                                     fontWeight: FontWeight.bold,
                                     color: _getSeverityColor(level),
                                   ),

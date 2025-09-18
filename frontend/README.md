@@ -1,44 +1,81 @@
-# AarogyaRekha Mobile App 📱
+# FlowSafe Mobile App 📱
 
 <div align="center">
-  <img src="../screenshots/mobile-app/dashboard.png" alt="AarogyaRekha Dashboard" width="300"/>
+  <img src="../screenshots/mobile-app/dashboard.png" alt="FlowSafe Dashboard" width="300"/>
 </div>
 
-**AarogyaRekha** - Your AI-powered health companion that predicts and prevents disease outbreaks before they happen.
+**FlowSafe** - Your comprehensive AI-powered health surveillance system that predicts, monitors, and prevents water-borne disease outbreaks with advanced analytics and emergency response capabilities.
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.8.1-blue.svg)](https://flutter.dev/)
 [![Dart](https://img.shields.io/badge/Dart-3.8.1-blue.svg)](https://dart.dev/)
+[![Analytics](https://img.shields.io/badge/fl__chart-0.68.0-blue.svg)](https://pub.dev/packages/fl_chart)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
 
 ## 🌟 Features
 
+### 🚨 Emergency Reporting System *[New]*
+- **Critical Health Incidents** - Immediate reporting of disease outbreaks, water contamination, and medical emergencies
+- **Real-time Alert Distribution** - Instant notifications to health authorities and emergency responders
+- **Severity Assessment** - Automated risk scoring with color-coded priority levels (Critical, High, Medium, Low)
+- **Contact Management** - Direct integration with emergency services and health departments
+- **Incident Tracking** - Complete audit trail from report to resolution with status updates
+- **Geographic Emergency Mapping** - GPS-based incident location for rapid response coordination
+
+### 📊 Comprehensive Health Data Collection Hub *[New]*
+- **Field Survey Management** - Door-to-door household health surveys with demographic tracking and family composition analysis
+- **Health Camp Data Collection** - Medical camp organization, patient statistics, and service delivery tracking
+- **ASHA Worker Interface** - Specialized tools for community health workers with simplified data entry and progress tracking
+- **Volunteer Data Collection** - Community volunteer interface for health data gathering and awareness campaigns
+- **Clinic Data Integration** - Local health clinic data collection with patient management capabilities
+- **Role-based Access Control** - Customized interfaces based on user type (ASHA, Volunteer, Clinic Staff, Community Members)
+
+### 📈 Advanced Analytics Dashboard *[New]*
+- **Interactive Charts & Graphs** - Real-time data visualization using fl_chart library with line, bar, and pie charts
+- **Water Quality Trends** - Monthly pH levels, turbidity, and bacterial contamination tracking with trend analysis
+- **Field Survey Analytics** - Completion rates, demographic analysis, and geographic distribution visualization
+- **Health Indicator Tracking** - Progress monitoring for vaccination, sanitation, water access, and infrastructure
+- **Performance Metrics** - Key performance indicators for health programs and interventions
+- **Predictive Analytics** - AI-powered forecasting for disease outbreaks and resource planning
+
 ### 🤖 AI-Powered Health Assistant
-- **Multilingual AI Chatbot** powered by Google Gemini
-- **Personalized health recommendations** based on location and symptoms
-- **24/7 health query support** in multiple Indian languages
+- **Multilingual AI Chatbot** powered by Google Gemini with enhanced health query processing
+- **Personalized health recommendations** based on location, symptoms, and collected health data
+- **24/7 health query support** in multiple Indian languages with context-aware responses
+- **Emergency Response Integration** - AI chatbot can escalate critical health concerns to emergency reporting system
 
 ### 📊 Disease Prediction & Alerts
-- **Real-time risk assessment** for malaria, dengue, diarrhea, and malnutrition
-- **Location-based alerts** with village-level granularity
-- **Smart notifications** with color-coded risk zones (Green/Yellow/Red)
+- **Real-time risk assessment** for water-borne diseases (diarrhea, cholera, typhoid, hepatitis A, dysentery)
+- **Location-based alerts** with village-level granularity and predictive modeling
+- **Smart notifications** with color-coded risk zones (Green/Yellow/Red) and personalized recommendations
+- **Outbreak Pattern Recognition** - Machine learning models for early detection and prevention
 
 ### 🗺️ Interactive Health Maps
-- **Live risk visualization** with interactive maps
-- **Geofenced alerts** for your specific location
-- **Satellite data integration** for environmental health monitoring
+- **Live risk visualization** with interactive maps and real-time data overlays
+- **Water Quality Monitoring** - Interactive maps showing contamination sources and testing locations
+- **Geofenced alerts** for your specific location with customizable radius settings
+- **Satellite data integration** for environmental health monitoring and watershed analysis
 
-### 👥 Multi-User Support
-- **Rural Households** - Simple alerts and prevention tips
-- **ASHA/Health Workers** - Field work interface and community monitoring
-- **Tourists** - Travel health advisories and local risk warnings
+### 👥 Multi-User Support *[Enhanced]*
+- **ASHA/Health Workers** - Comprehensive field work interface, community monitoring, and specialized data collection tools
+- **Community Volunteers** - Volunteer-specific interface with simplified workflows and progress tracking
+- **Local Clinics** - Clinical data management, patient tracking, and service delivery monitoring
+- **Rural Households** - Simple alerts, prevention tips, and emergency reporting capabilities
+- **Health Officials** - Administrative dashboard with analytics and emergency coordination tools
 
-### 📱 Core App Features
-- **Google OAuth Authentication** - Secure and seamless login
-- **Profile Management** - User preferences and health history
-- **Prescription Management** - Upload and track prescriptions
-- **Health Check** - Symptom assessment and recommendations
-- **Notification Center** - Customizable alert preferences
-- **Offline Support** - Core features work without internet
+### 💧 Water Quality Monitoring *[Enhanced]*
+- **Real-time Water Testing** - IoT sensor integration with live data streaming and alerts
+- **Manual Test Kit Support** - pH, turbidity, TDS, bacterial count with trend analysis and recommendations
+- **Water Source Tracking** - Comprehensive monitoring of borewells, hand pumps, community wells with historical data
+- **Interactive Analytics** - Charts showing water quality trends, safety level distribution, and testing activity
+- **Contamination Mapping** - Geographic visualization of water quality issues and improvement tracking
+
+### 📱 Core App Features *[Enhanced]*
+- **Google OAuth Authentication** - Secure and seamless login with role-based access control
+- **Advanced Profile Management** - User preferences, health history, and role-specific customization
+- **Prescription Management** - Upload, track, and manage prescriptions with OCR text recognition
+- **Comprehensive Health Check** - Symptom assessment, risk evaluation, and personalized recommendations
+- **Smart Notification Center** - Customizable alert preferences with emergency escalation
+- **Robust Offline Support** - Complete offline data collection, automatic sync, and conflict resolution
 
 ## 🛠️ Technology Stack
 
@@ -52,13 +89,16 @@
 - **Service Layer** - API and business logic abstraction
 
 ### Key Dependencies
-- **Google Sign-In** 6.1.5 - Authentication
-- **Google Generative AI** 0.4.7 - AI chatbot integration
-- **HTTP** 1.1.0 - API communication
-- **Geolocator** 14.0.2 - Location services
-- **Flutter Map** 8.1.1 - Interactive maps
-- **Image Picker** 1.0.4 - Camera and gallery access
-- **Flutter Secure Storage** 10.0.0 - Secure data storage
+- **Google Sign-In** 6.1.5 - Authentication and OAuth integration
+- **Google Generative AI** 0.4.7 - AI chatbot integration with emergency response capabilities
+- **HTTP** 1.1.0 - API communication and data synchronization
+- **fl_chart** 0.68.0 - Advanced analytics charts and data visualization
+- **Geolocator** 14.0.2 - Location services and GPS tracking for emergency reporting
+- **Flutter Map** 8.1.1 - Interactive maps with water quality overlays
+- **Image Picker** 1.0.4 - Camera and gallery access for documentation
+- **Flutter Secure Storage** 10.0.0 - Secure data storage for sensitive health information
+- **Shared Preferences** 2.2.2 - Local data persistence and offline sync capabilities
+- **Provider** 6.1.1 - State management for complex data flows
 
 ## 🚀 Quick Start
 
@@ -104,37 +144,60 @@
 
 ```
 lib/
-├── main.dart                 # App entry point
-├── config/                   # Configuration files
-├── models/                   # Data models
-│   ├── user_model.dart
-│   ├── health_data_model.dart
-│   └── alert_model.dart
-├── screens/                  # UI Screens
-│   ├── auth/                 # Authentication screens
-│   │   ├── login_page.dart
-│   │   └── register_page.dart
-│   ├── dashboard_screen.dart # Main dashboard
-│   ├── profile_screen.dart   # User profile
-│   ├── chatbot_screen.dart   # AI chatbot
-│   ├── risk_map_screen.dart  # Interactive maps
-│   ├── alerts_screen.dart    # Alert center
-│   ├── health_check_screen.dart
-│   ├── notifications_screen.dart
-│   └── settings_screen.dart
-├── services/                 # Business logic & API
-│   ├── api_service.dart      # Main API service
-│   ├── auth_state.dart       # Authentication state
-│   ├── location_service.dart # Location services
-│   ├── gemini_service.dart   # AI chatbot service
-│   ├── health_prediction_service.dart
-│   └── alerts_service.dart
-├── widgets/                  # Reusable UI components
-│   ├── custom_app_bar.dart
-│   ├── health_card.dart
-│   ├── risk_indicator.dart
-│   └── chat_bubble.dart
-└── demo/                     # Demo and test files
+├── main.dart                          # App entry point with theme configuration
+├── config/                            # Configuration files
+├── models/                            # Data models
+│   ├── user_model.dart               # User profile and authentication data
+│   ├── health_data_model.dart        # Health survey and medical data models
+│   ├── water_quality_model.dart      # Water testing and monitoring data
+│   ├── emergency_report_model.dart   # Emergency incident reporting data
+│   └── alert_model.dart              # Alert and notification models
+├── screens/                           # UI Screens
+│   ├── auth/                         # Authentication screens
+│   │   ├── login_page.dart           # Login with Google OAuth
+│   │   └── register_page.dart        # User registration
+│   ├── dashboard_screen.dart         # Main dashboard with analytics overview
+│   ├── profile_screen.dart           # User profile management
+│   ├── chatbot_screen.dart           # AI chatbot with emergency escalation
+│   ├── risk_map_screen.dart          # Interactive maps with water quality data
+│   ├── alerts_screen.dart            # Alert center and notifications
+│   ├── health_check_screen.dart      # Symptom assessment
+│   ├── notifications_screen.dart     # Push notification management
+│   ├── settings_screen.dart          # App settings and preferences
+│   ├── water_quality_dashboard_screen.dart  # Water quality analytics with charts
+│   ├── water_quality_details_screen.dart    # Detailed water quality information
+│   ├── water_quality_screen.dart            # Water quality data entry
+│   ├── emergency_report_screen.dart         # Emergency incident reporting [NEW]
+│   ├── health_data_collection_hub.dart     # Central hub for health data collection [NEW]
+│   ├── field_survey_screen.dart            # Field survey data collection with analytics [NEW]
+│   ├── health_camp_data_screen.dart        # Health camp management and statistics [NEW]
+│   ├── asha_worker_screen.dart             # ASHA worker interface [NEW]
+│   ├── volunteer_data_screen.dart          # Volunteer data collection interface [NEW]
+│   └── clinic_data_screen.dart             # Local clinic data management [NEW]
+├── services/                          # Business logic & API services
+│   ├── api_service.dart              # Main API service with authentication
+│   ├── auth_state.dart               # Authentication state management
+│   ├── location_service.dart         # GPS location and geofencing services
+│   ├── gemini_service.dart           # AI chatbot service with health intelligence
+│   ├── health_prediction_service.dart # Disease prediction and risk assessment
+│   ├── alerts_service.dart           # Alert management and distribution
+│   ├── health_data_service.dart      # Health data collection and analytics [NEW]
+│   ├── emergency_service.dart        # Emergency reporting and response [NEW]
+│   ├── water_quality_service.dart    # Water quality monitoring and analysis
+│   └── offline_sync_service.dart     # Offline data synchronization
+├── widgets/                           # Reusable UI components
+│   ├── custom_app_bar.dart           # Custom app bar with user context
+│   ├── health_card.dart              # Health information display cards
+│   ├── risk_indicator.dart           # Risk level visualization
+│   ├── chart_widgets.dart            # Analytics chart components [NEW]
+│   ├── emergency_widgets.dart        # Emergency reporting UI components [NEW]
+│   ├── data_collection_widgets.dart  # Health data collection form components [NEW]
+│   ├── chat_bubble.dart              # Chat interface components
+│   ├── localized_text.dart           # Multilingual text support
+│   └── main_navigation.dart          # Bottom navigation with role-based access
+└── demo/                              # Demo and test files
+    ├── mock_data.dart                # Sample data for testing
+    └── test_scenarios.dart           # Testing scenarios and user flows
 ```
 
 ## 🔧 Configuration

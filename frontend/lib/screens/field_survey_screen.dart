@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fl_chart/fl_chart.dart';
 import '../services/health_data_service.dart';
 
 class FieldSurveyScreen extends StatefulWidget {
@@ -65,6 +66,10 @@ class _FieldSurveyScreenState extends State<FieldSurveyScreen> {
 
   String _incomeRange = 'Below 10,000';
 
+  // Analytics data
+  bool _showAnalytics = false;
+  late Map<String, dynamic> _analyticsData;
+
   final List<String> _incomeRanges = [
     'Below 10,000',
     '10,000 - 25,000',
@@ -72,6 +77,477 @@ class _FieldSurveyScreenState extends State<FieldSurveyScreen> {
     '50,000 - 1,00,000',
     'Above 1,00,000',
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeAnalyticsData();
+  }
+
+  void _initializeAnalyticsData() {
+    _analyticsData = {
+      'totalSurveys': 1247,
+      'completionRate': 87.5,
+      'averageHouseholdSize': 4.2,
+      'monthlyTrends': [
+        {'month': 'Jan', 'surveys': 98, 'completion': 85},
+        {'month': 'Feb', 'surveys': 112, 'completion': 88},
+        {'month': 'Mar', 'surveys': 156, 'completion': 91},
+        {'month': 'Apr', 'surveys': 134, 'completion': 86},
+        {'month': 'May', 'surveys': 187, 'completion': 89},
+        {'month': 'Jun', 'surveys': 201, 'completion': 92},
+        {'month': 'Jul', 'surveys': 178, 'completion': 87},
+        {'month': 'Aug', 'surveys': 181, 'completion': 85},
+      ],
+      'surveyTypes': {
+        'Door-to-Door Health Survey': 45.2,
+        'Community Health Assessment': 18.7,
+        'Disease Surveillance Survey': 12.3,
+        'Nutrition Survey': 8.9,
+        'Water & Sanitation Survey': 7.8,
+        'Others': 7.1,
+      },
+      'areaDistribution': {
+        'Urban': 52.3,
+        'Rural': 31.8,
+        'Semi-Urban': 12.4,
+        'Tribal': 3.5,
+      },
+      'healthIndicators': {
+        'safeWaterAccess': 78.5,
+        'sanitationFacilities': 82.3,
+        'electricityAvailable': 91.2,
+        'vaccinationUpToDate': 76.8,
+        'chronicDiseasePresent': 23.7,
+      },
+    };
+  }
+
+  Widget _buildAnalyticsView() {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Header Card
+          Card(
+            elevation: 4,
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade700,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: [
+                  const Icon(
+                    Icons.analytics,
+                    color: Colors.white,
+                    size: 40,
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Field Survey Analytics',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    'Data Insights & Trends',
+                    style: TextStyle(
+                      color: Colors.orange.shade100,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          // Key Metrics Cards
+          Row(
+            children: [
+              Expanded(
+                child: _buildMetricCard(
+                  'Total Surveys',
+                  _analyticsData['totalSurveys'].toString(),
+                  Icons.assignment,
+                  Colors.blue,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: _buildMetricCard(
+                  'Completion Rate',
+                  '${_analyticsData['completionRate']}%',
+                  Icons.check_circle,
+                  Colors.green,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              Expanded(
+                child: _buildMetricCard(
+                  'Avg Household Size',
+                  _analyticsData['averageHouseholdSize'].toString(),
+                  Icons.people,
+                  Colors.purple,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: _buildMetricCard(
+                  'Safe Water Access',
+                  '${_analyticsData['healthIndicators']['safeWaterAccess']}%',
+                  Icons.water_drop,
+                  Colors.cyan,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+
+          // Monthly Survey Trends Chart
+          _buildSectionCard(
+            title: 'Monthly Survey Trends',
+            icon: Icons.trending_up,
+            children: [
+              Container(
+                height: 250,
+                padding: const EdgeInsets.all(16),
+                child: LineChart(
+                  LineChartData(
+                    gridData: FlGridData(show: true),
+                    titlesData: FlTitlesData(
+                      leftTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          reservedSize: 40,
+                          getTitlesWidget: (value, meta) {
+                            return Text(
+                              value.toInt().toString(),
+                              style: const TextStyle(fontSize: 10),
+                            );
+                          },
+                        ),
+                      ),
+                      bottomTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          getTitlesWidget: (value, meta) {
+                            final months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
+                            if (value.toInt() >= 0 && value.toInt() < months.length) {
+                              return Text(
+                                months[value.toInt()],
+                                style: const TextStyle(fontSize: 10),
+                              );
+                            }
+                            return const Text('');
+                          },
+                        ),
+                      ),
+                      topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    ),
+                    borderData: FlBorderData(show: true),
+                    lineBarsData: [
+                      LineChartBarData(
+                        spots: List.generate(
+                          _analyticsData['monthlyTrends'].length,
+                          (index) => FlSpot(
+                            index.toDouble(),
+                            _analyticsData['monthlyTrends'][index]['surveys'].toDouble(),
+                          ),
+                        ),
+                        isCurved: true,
+                        color: Colors.orange.shade600,
+                        barWidth: 3,
+                        belowBarData: BarAreaData(
+                          show: true,
+                          color: Colors.orange.shade100,
+                        ),
+                        dotData: const FlDotData(show: true),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          // Survey Types Distribution
+          _buildSectionCard(
+            title: 'Survey Types Distribution',
+            icon: Icons.pie_chart,
+            children: [
+              Container(
+                height: 200,
+                padding: const EdgeInsets.all(16),
+                child: PieChart(
+                  PieChartData(
+                    sections: _analyticsData['surveyTypes']
+                        .entries
+                        .map<PieChartSectionData>((entry) {
+                      final colors = [
+                        Colors.orange.shade700,
+                        Colors.blue.shade600,
+                        Colors.green.shade600,
+                        Colors.purple.shade600,
+                        Colors.red.shade600,
+                        Colors.cyan.shade600,
+                      ];
+                      final index = _analyticsData['surveyTypes'].keys.toList().indexOf(entry.key);
+                      return PieChartSectionData(
+                        value: entry.value,
+                        title: '${entry.value.toStringAsFixed(1)}%',
+                        color: colors[index % colors.length],
+                        radius: 50,
+                        titleStyle: const TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      );
+                    }).toList(),
+                    centerSpaceRadius: 40,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              // Legend
+              Wrap(
+                children: _analyticsData['surveyTypes'].entries.map<Widget>((entry) {
+                  final colors = [
+                    Colors.orange.shade700,
+                    Colors.blue.shade600,
+                    Colors.green.shade600,
+                    Colors.purple.shade600,
+                    Colors.red.shade600,
+                    Colors.cyan.shade600,
+                  ];
+                  final index = _analyticsData['surveyTypes'].keys.toList().indexOf(entry.key);
+                  return Container(
+                    margin: const EdgeInsets.all(4),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          width: 12,
+                          height: 12,
+                          decoration: BoxDecoration(
+                            color: colors[index % colors.length],
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        Text(
+                          entry.key,
+                          style: const TextStyle(fontSize: 10),
+                        ),
+                      ],
+                    ),
+                  );
+                }).toList(),
+              ),
+            ],
+          ),
+
+          // Area Distribution
+          _buildSectionCard(
+            title: 'Area Type Distribution',
+            icon: Icons.location_on,
+            children: [
+              Container(
+                height: 200,
+                padding: const EdgeInsets.all(16),
+                child: BarChart(
+                  BarChartData(
+                    alignment: BarChartAlignment.spaceAround,
+                    maxY: 60,
+                    barTouchData: BarTouchData(enabled: false),
+                    titlesData: FlTitlesData(
+                      leftTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          reservedSize: 40,
+                          getTitlesWidget: (value, meta) {
+                            return Text(
+                              '${value.toInt()}%',
+                              style: const TextStyle(fontSize: 10),
+                            );
+                          },
+                        ),
+                      ),
+                      bottomTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          getTitlesWidget: (value, meta) {
+                            final areas = _analyticsData['areaDistribution'].keys.toList();
+                            if (value.toInt() >= 0 && value.toInt() < areas.length) {
+                              return Text(
+                                areas[value.toInt()],
+                                style: const TextStyle(fontSize: 10),
+                              );
+                            }
+                            return const Text('');
+                          },
+                        ),
+                      ),
+                      topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    ),
+                    borderData: FlBorderData(show: false),
+                    barGroups: _analyticsData['areaDistribution']
+                        .entries
+                        .toList()
+                        .asMap()
+                        .entries
+                        .map((entry) {
+                      final colors = [
+                        Colors.orange.shade600,
+                        Colors.blue.shade600,
+                        Colors.green.shade600,
+                        Colors.purple.shade600,
+                      ];
+                      return BarChartGroupData(
+                        x: entry.key,
+                        barRods: [
+                          BarChartRodData(
+                            toY: entry.value.value,
+                            color: colors[entry.key % colors.length],
+                            width: 30,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ],
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          // Health Indicators
+          _buildSectionCard(
+            title: 'Health Indicators Overview',
+            icon: Icons.health_and_safety,
+            children: [
+              ..._analyticsData['healthIndicators'].entries.map<Widget>((entry) {
+                final icons = {
+                  'safeWaterAccess': Icons.water_drop,
+                  'sanitationFacilities': Icons.bathroom,
+                  'electricityAvailable': Icons.electrical_services,
+                  'vaccinationUpToDate': Icons.vaccines,
+                  'chronicDiseasePresent': Icons.sick,
+                };
+                final labels = {
+                  'safeWaterAccess': 'Safe Water Access',
+                  'sanitationFacilities': 'Sanitation Facilities',
+                  'electricityAvailable': 'Electricity Available',
+                  'vaccinationUpToDate': 'Vaccination Up-to-Date',
+                  'chronicDiseasePresent': 'Chronic Disease Present',
+                };
+                return Container(
+                  margin: const EdgeInsets.only(bottom: 12),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.orange.shade50,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.orange.shade200),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        icons[entry.key] ?? Icons.health_and_safety,
+                        color: Colors.orange.shade700,
+                        size: 24,
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              labels[entry.key] ?? entry.key,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            LinearProgressIndicator(
+                              value: entry.value / 100,
+                              backgroundColor: Colors.grey.shade300,
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                Colors.orange.shade600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Text(
+                        '${entry.value.toStringAsFixed(1)}%',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.orange.shade700,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMetricCard(String title, String value, IconData icon, Color color) {
+    return Card(
+      elevation: 2,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          children: [
+            Icon(icon, color: color, size: 30),
+            const SizedBox(height: 8),
+            Text(
+              value,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: color,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   @override
   void dispose() {
@@ -93,6 +569,15 @@ class _FieldSurveyScreenState extends State<FieldSurveyScreen> {
         foregroundColor: Colors.white,
         actions: [
           IconButton(
+            icon: Icon(_showAnalytics ? Icons.assignment : Icons.analytics),
+            onPressed: () {
+              setState(() {
+                _showAnalytics = !_showAnalytics;
+              });
+            },
+            tooltip: _showAnalytics ? 'Show Form' : 'Show Analytics',
+          ),
+          IconButton(
             icon: const Icon(Icons.save),
             onPressed: _isLoading ? null : _saveSurveyData,
           ),
@@ -109,7 +594,7 @@ class _FieldSurveyScreenState extends State<FieldSurveyScreen> {
             ],
           ),
         ),
-        child: Form(
+        child: _showAnalytics ? _buildAnalyticsView() : Form(
           key: _formKey,
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(16),
@@ -161,55 +646,59 @@ class _FieldSurveyScreenState extends State<FieldSurveyScreen> {
                   title: 'Survey Information',
                   icon: Icons.assignment,
                   children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: DropdownButtonFormField<String>(
-                            value: _surveyType,
-                            decoration: const InputDecoration(
-                              labelText: 'Survey Type',
-                              prefixIcon: Icon(Icons.poll),
-                            ),
-                            items: _surveyTypes.map((type) {
-                              return DropdownMenuItem(
-                                value: type,
-                                child: Text(
-                                  type, 
-                                  style: const TextStyle(fontSize: 11),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                ),
-                              );
-                            }).toList(),
-                            onChanged: (value) {
-                              setState(() {
-                                _surveyType = value!;
-                              });
-                            },
+                    DropdownButtonFormField<String>(
+                      value: _surveyType,
+                      isExpanded: true,
+                      decoration: const InputDecoration(
+                        labelText: 'Survey Type',
+                        labelStyle: TextStyle(fontSize: 11),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                        isDense: true,
+                        border: OutlineInputBorder(),
+                      ),
+                      items: _surveyTypes.map((type) {
+                        return DropdownMenuItem(
+                          value: type,
+                          child: Text(
+                            type, 
+                            style: const TextStyle(fontSize: 11),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                           ),
-                        ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: DropdownButtonFormField<String>(
-                            value: _areaType,
-                            decoration: const InputDecoration(
-                              labelText: 'Area Type',
-                              prefixIcon: Icon(Icons.location_city),
-                            ),
-                            items: _areaTypes.map((area) {
-                              return DropdownMenuItem(
-                                value: area,
-                                child: Text(area),
-                              );
-                            }).toList(),
-                            onChanged: (value) {
-                              setState(() {
-                                _areaType = value!;
-                              });
-                            },
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _surveyType = value!;
+                        });
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    DropdownButtonFormField<String>(
+                      value: _areaType,
+                      isExpanded: true,
+                      decoration: const InputDecoration(
+                        labelText: 'Area Type',
+                        labelStyle: TextStyle(fontSize: 11),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                        isDense: true,
+                        border: OutlineInputBorder(),
+                      ),
+                      items: _areaTypes.map((area) {
+                        return DropdownMenuItem(
+                          value: area,
+                          child: Text(
+                            area,
+                            style: const TextStyle(fontSize: 11),
+                            overflow: TextOverflow.ellipsis,
                           ),
-                        ),
-                      ],
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _areaType = value!;
+                        });
+                      },
                     ),
                     const SizedBox(height: 16),
                     Container(
@@ -258,50 +747,48 @@ class _FieldSurveyScreenState extends State<FieldSurveyScreen> {
                   title: 'Household Information',
                   icon: Icons.home,
                   children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: TextFormField(
-                            controller: _householdIdController,
-                            decoration: const InputDecoration(
-                              labelText: 'Household ID',
-                              prefixIcon: Icon(Icons.tag),
-                            ),
-                            validator: (value) {
-                              if (value?.isEmpty ?? true) {
-                                return 'Household ID is required';
-                              }
-                              return null;
-                            },
+                    TextFormField(
+                      controller: _householdIdController,
+                      decoration: const InputDecoration(
+                        labelText: 'Household ID',
+                        prefixIcon: Icon(Icons.tag, size: 20),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                        isDense: true,
+                      ),
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
+                          return 'Household ID is required';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    DropdownButtonFormField<String>(
+                      value: _householdType,
+                      isExpanded: true,
+                      decoration: const InputDecoration(
+                        labelText: 'Household Type',
+                        prefixIcon: Icon(Icons.family_restroom, size: 20),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                        isDense: true,
+                        border: OutlineInputBorder(),
+                      ),
+                      items: _householdTypes.map((type) {
+                        return DropdownMenuItem(
+                          value: type,
+                          child: Text(
+                            type, 
+                            style: const TextStyle(fontSize: 12),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                           ),
-                        ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: DropdownButtonFormField<String>(
-                            value: _householdType,
-                            decoration: const InputDecoration(
-                              labelText: 'Household Type',
-                              prefixIcon: Icon(Icons.family_restroom),
-                            ),
-                            items: _householdTypes.map((type) {
-                              return DropdownMenuItem(
-                                value: type,
-                                child: Text(
-                                  type, 
-                                  style: const TextStyle(fontSize: 11),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                ),
-                              );
-                            }).toList(),
-                            onChanged: (value) {
-                              setState(() {
-                                _householdType = value!;
-                              });
-                            },
-                          ),
-                        ),
-                      ],
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _householdType = value!;
+                        });
+                      },
                     ),
                     const SizedBox(height: 16),
                     TextFormField(
@@ -490,14 +977,22 @@ class _FieldSurveyScreenState extends State<FieldSurveyScreen> {
                   children: [
                     DropdownButtonFormField<String>(
                       value: _incomeRange,
+                      isExpanded: true,
                       decoration: const InputDecoration(
                         labelText: 'Monthly Household Income',
-                        prefixIcon: Icon(Icons.currency_rupee),
+                        prefixIcon: Icon(Icons.currency_rupee, size: 20),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                        isDense: true,
+                        border: OutlineInputBorder(),
                       ),
                       items: _incomeRanges.map((range) {
                         return DropdownMenuItem(
                           value: range,
-                          child: Text(range),
+                          child: Text(
+                            range,
+                            style: const TextStyle(fontSize: 12),
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         );
                       }).toList(),
                       onChanged: (value) {

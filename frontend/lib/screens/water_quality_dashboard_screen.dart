@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:fl_chart/fl_chart.dart';
 import '../widgets/localized_text.dart';
 import '../services/water_quality_service.dart';
 import 'water_quality_details_screen.dart';
@@ -19,12 +20,53 @@ class _WaterQualityDashboardScreenState extends State<WaterQualityDashboardScree
   List<WaterSource> waterSources = [];
   bool isLoading = true;
   String selectedFilter = 'all';
+  
+  // Analytics data
+  late Map<String, dynamic> _analyticsData;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+    _initializeAnalyticsData();
     _loadWaterQualityData();
+  }
+
+  void _initializeAnalyticsData() {
+    _analyticsData = {
+      'monthlyTrends': [
+        {'month': 'Jan', 'ph': 7.1, 'turbidity': 2.3, 'bacterial': 5},
+        {'month': 'Feb', 'ph': 7.2, 'turbidity': 2.1, 'bacterial': 8},
+        {'month': 'Mar', 'ph': 7.0, 'turbidity': 2.5, 'bacterial': 12},
+        {'month': 'Apr', 'ph': 7.3, 'turbidity': 1.9, 'bacterial': 6},
+        {'month': 'May', 'ph': 7.2, 'turbidity': 2.0, 'bacterial': 10},
+        {'month': 'Jun', 'ph': 7.4, 'turbidity': 1.8, 'bacterial': 4},
+        {'month': 'Jul', 'ph': 7.1, 'turbidity': 2.2, 'bacterial': 15},
+        {'month': 'Aug', 'ph': 7.2, 'turbidity': 2.1, 'bacterial': 9},
+      ],
+      'safetyLevels': {
+        'Safe': 65.2,
+        'Moderate': 23.8,
+        'Poor': 8.5,
+        'Critical': 2.5,
+      },
+      'parameters': {
+        'averagePH': 7.2,
+        'averageTurbidity': 2.1,
+        'bacterialSources': 12,
+        'totalSources': 142,
+        'complianceRate': 87.5,
+      },
+      'weeklyData': [
+        {'day': 'Mon', 'tests': 18, 'violations': 2},
+        {'day': 'Tue', 'tests': 22, 'violations': 1},
+        {'day': 'Wed', 'tests': 25, 'violations': 3},
+        {'day': 'Thu', 'tests': 20, 'violations': 0},
+        {'day': 'Fri', 'tests': 28, 'violations': 4},
+        {'day': 'Sat', 'tests': 15, 'violations': 1},
+        {'day': 'Sun', 'tests': 12, 'violations': 0},
+      ],
+    };
   }
 
   @override
@@ -433,9 +475,76 @@ class _WaterQualityDashboardScreenState extends State<WaterQualityDashboardScree
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
-          _buildTrendCard('pH Levels', 'Average: 7.2', Icons.science, Colors.blue),
-          _buildTrendCard('Turbidity', 'Average: 2.1 NTU', Icons.visibility, Colors.orange),
-          _buildTrendCard('Bacterial Count', '12% sources affected', Icons.bug_report, Colors.red),
+          
+          // Summary Cards Row
+          Row(
+            children: [
+              Expanded(
+                child: _buildAnalyticsSummaryCard(
+                  'Total Sources',
+                  _analyticsData['parameters']['totalSources'].toString(),
+                  Icons.water,
+                  Colors.blue,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: _buildAnalyticsSummaryCard(
+                  'Safe Sources',
+                  '${(_analyticsData['parameters']['totalSources'] * _analyticsData['safetyLevels']['Safe'] / 100).round()}',
+                  Icons.check_circle,
+                  Colors.green,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              Expanded(
+                child: _buildAnalyticsSummaryCard(
+                  'Critical Sources',
+                  '${(_analyticsData['parameters']['totalSources'] * _analyticsData['safetyLevels']['Critical'] / 100).round()}',
+                  Icons.warning,
+                  Colors.red,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: _buildAnalyticsSummaryCard(
+                  'This Month Tests',
+                  '168',
+                  Icons.assignment,
+                  Colors.purple,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          _buildTrendCard(
+            'pH Levels', 
+            'Average: ${_analyticsData['parameters']['averagePH']}', 
+            Icons.science, 
+            Colors.blue
+          ),
+          _buildTrendCard(
+            'Turbidity', 
+            'Average: ${_analyticsData['parameters']['averageTurbidity']} NTU', 
+            Icons.visibility, 
+            Colors.orange
+          ),
+          _buildTrendCard(
+            'Bacterial Count', 
+            '${_analyticsData['parameters']['bacterialSources']}% sources affected', 
+            Icons.bug_report, 
+            Colors.red
+          ),
+          _buildTrendCard(
+            'Compliance Rate', 
+            '${_analyticsData['parameters']['complianceRate']}%', 
+            Icons.check_circle, 
+            Colors.green
+          ),
           const SizedBox(height: 24),
           _buildMonthlyTrends(),
         ],
@@ -482,30 +591,405 @@ class _WaterQualityDashboardScreenState extends State<WaterQualityDashboardScree
   }
 
   Widget _buildMonthlyTrends() {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Monthly Water Quality Trends',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16),
-            Container(
-              height: 200,
-              decoration: BoxDecoration(
-                color: Colors.grey[100],
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Center(
-                child: Text(
-                  'Chart Placeholder\n(Integration with charts_flutter needed)',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.grey),
+    return Column(
+      children: [
+        // pH and Turbidity Trends
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Monthly Water Quality Trends',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
+                const SizedBox(height: 16),
+                Container(
+                  height: 250,
+                  child: LineChart(
+                    LineChartData(
+                      gridData: FlGridData(show: true),
+                      titlesData: FlTitlesData(
+                        leftTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            reservedSize: 40,
+                            getTitlesWidget: (value, meta) {
+                              return Text(
+                                value.toStringAsFixed(1),
+                                style: const TextStyle(fontSize: 10),
+                              );
+                            },
+                          ),
+                        ),
+                        bottomTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            getTitlesWidget: (value, meta) {
+                              final months = _analyticsData['monthlyTrends']
+                                  .map<String>((data) => data['month'] as String)
+                                  .toList();
+                              if (value.toInt() >= 0 && value.toInt() < months.length) {
+                                return Text(
+                                  months[value.toInt()],
+                                  style: const TextStyle(fontSize: 10),
+                                );
+                              }
+                              return const Text('');
+                            },
+                          ),
+                        ),
+                        topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                        rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      ),
+                      borderData: FlBorderData(show: true),
+                      lineBarsData: [
+                        // pH Line
+                        LineChartBarData(
+                          spots: List.generate(
+                            _analyticsData['monthlyTrends'].length,
+                            (index) => FlSpot(
+                              index.toDouble(),
+                              _analyticsData['monthlyTrends'][index]['ph'].toDouble(),
+                            ),
+                          ),
+                          isCurved: true,
+                          color: Colors.blue.shade600,
+                          barWidth: 3,
+                          belowBarData: BarAreaData(show: false),
+                          dotData: const FlDotData(show: true),
+                        ),
+                        // Turbidity Line
+                        LineChartBarData(
+                          spots: List.generate(
+                            _analyticsData['monthlyTrends'].length,
+                            (index) => FlSpot(
+                              index.toDouble(),
+                              _analyticsData['monthlyTrends'][index]['turbidity'].toDouble(),
+                            ),
+                          ),
+                          isCurved: true,
+                          color: Colors.orange.shade600,
+                          barWidth: 3,
+                          belowBarData: BarAreaData(show: false),
+                          dotData: const FlDotData(show: true),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                // Legend
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildLegendItem('pH Levels', Colors.blue.shade600),
+                    const SizedBox(width: 20),
+                    _buildLegendItem('Turbidity (NTU)', Colors.orange.shade600),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+
+        // Safety Level Distribution Pie Chart
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Water Source Safety Distribution',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
+                Container(
+                  height: 200,
+                  child: PieChart(
+                    PieChartData(
+                      sections: _analyticsData['safetyLevels']
+                          .entries
+                          .map<PieChartSectionData>((entry) {
+                        final colors = {
+                          'Safe': Colors.green.shade600,
+                          'Moderate': Colors.yellow.shade700,
+                          'Poor': Colors.orange.shade600,
+                          'Critical': Colors.red.shade600,
+                        };
+                        return PieChartSectionData(
+                          value: entry.value,
+                          title: '${entry.value.toStringAsFixed(1)}%',
+                          color: colors[entry.key] ?? Colors.grey,
+                          radius: 60,
+                          titleStyle: const TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        );
+                      }).toList(),
+                      centerSpaceRadius: 40,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                // Pie Chart Legend
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  children: _analyticsData['safetyLevels'].entries.map<Widget>((entry) {
+                    final colors = {
+                      'Safe': Colors.green.shade600,
+                      'Moderate': Colors.yellow.shade700,
+                      'Poor': Colors.orange.shade600,
+                      'Critical': Colors.red.shade600,
+                    };
+                    return Container(
+                      margin: const EdgeInsets.all(4),
+                      child: _buildLegendItem(entry.key, colors[entry.key] ?? Colors.grey),
+                    );
+                  }).toList(),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+
+        // Weekly Testing Activity Bar Chart
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Weekly Testing Activity',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
+                Container(
+                  height: 200,
+                  child: BarChart(
+                    BarChartData(
+                      alignment: BarChartAlignment.spaceAround,
+                      maxY: 30,
+                      barTouchData: BarTouchData(enabled: false),
+                      titlesData: FlTitlesData(
+                        leftTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            reservedSize: 40,
+                            getTitlesWidget: (value, meta) {
+                              return Text(
+                                value.toInt().toString(),
+                                style: const TextStyle(fontSize: 10),
+                              );
+                            },
+                          ),
+                        ),
+                        bottomTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            getTitlesWidget: (value, meta) {
+                              final days = _analyticsData['weeklyData']
+                                  .map<String>((data) => data['day'] as String)
+                                  .toList();
+                              if (value.toInt() >= 0 && value.toInt() < days.length) {
+                                return Text(
+                                  days[value.toInt()],
+                                  style: const TextStyle(fontSize: 10),
+                                );
+                              }
+                              return const Text('');
+                            },
+                          ),
+                        ),
+                        topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                        rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      ),
+                      borderData: FlBorderData(show: false),
+                      barGroups: _analyticsData['weeklyData']
+                          .asMap()
+                          .entries
+                          .map<BarChartGroupData>((entry) {
+                        return BarChartGroupData(
+                          x: entry.key,
+                          barRods: [
+                            BarChartRodData(
+                              toY: entry.value['tests'].toDouble(),
+                              color: Colors.blue.shade600,
+                              width: 20,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Center(
+                  child: Text(
+                    'Daily water quality tests conducted',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        // Bacterial Contamination Trend
+        const SizedBox(height: 16),
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Bacterial Contamination Trends',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
+                Container(
+                  height: 200,
+                  child: LineChart(
+                    LineChartData(
+                      gridData: FlGridData(show: true),
+                      titlesData: FlTitlesData(
+                        leftTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            reservedSize: 40,
+                            getTitlesWidget: (value, meta) {
+                              return Text(
+                                '${value.toInt()}%',
+                                style: const TextStyle(fontSize: 10),
+                              );
+                            },
+                          ),
+                        ),
+                        bottomTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            getTitlesWidget: (value, meta) {
+                              final months = _analyticsData['monthlyTrends']
+                                  .map<String>((data) => data['month'] as String)
+                                  .toList();
+                              if (value.toInt() >= 0 && value.toInt() < months.length) {
+                                return Text(
+                                  months[value.toInt()],
+                                  style: const TextStyle(fontSize: 10),
+                                );
+                              }
+                              return const Text('');
+                            },
+                          ),
+                        ),
+                        topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                        rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      ),
+                      borderData: FlBorderData(show: true),
+                      lineBarsData: [
+                        LineChartBarData(
+                          spots: List.generate(
+                            _analyticsData['monthlyTrends'].length,
+                            (index) => FlSpot(
+                              index.toDouble(),
+                              _analyticsData['monthlyTrends'][index]['bacterial'].toDouble(),
+                            ),
+                          ),
+                          isCurved: true,
+                          color: Colors.red.shade600,
+                          barWidth: 3,
+                          belowBarData: BarAreaData(
+                            show: true,
+                            color: Colors.red.shade100,
+                          ),
+                          dotData: const FlDotData(show: true),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Center(
+                  child: Text(
+                    'Percentage of sources with bacterial contamination',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildLegendItem(String label, Color color) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          width: 12,
+          height: 12,
+          decoration: BoxDecoration(
+            color: color,
+            shape: BoxShape.circle,
+          ),
+        ),
+        const SizedBox(width: 4),
+        Text(
+          label,
+          style: const TextStyle(fontSize: 12),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildAnalyticsSummaryCard(String title, String value, IconData icon, Color color) {
+    return Card(
+      elevation: 2,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          children: [
+            Icon(icon, color: color, size: 30),
+            const SizedBox(height: 8),
+            Text(
+              value,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: color,
               ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
