@@ -34,19 +34,19 @@ https://github.com/user-attachments/assets/587c3f94-a49d-4ed8-8263-d56318387a04
 
 [Click here to view the presentation](https://docs.google.com/presentation/d/15ZrNp3PPfow25XWRmxWCd0ObyUBhTON5wkk3iI3HX6g/edit?usp=sharing)
 
-
+![WhatsApp Image 2025-09-18 at 7 30 16 PM](https://github.com/user-attachments/assets/aa2cb191-bbd4-40ca-99d8-e345fb6aedab)
 
 ## Screenshots
 
 ### Mobile App Interface
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/9bd7cd2a-e412-499d-a02f-7d96af853772" alt="Settings" width="350" height="850"/>
-  <img src="https://github.com/user-attachments/assets/b81ab416-1c93-4373-a9c2-ed2b17b0b093" alt="Prescriptions" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/c444f037-8f64-4fb0-b26e-d54973585274" alt="Settings" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/4d027694-d363-4638-abf0-e679839be9af" alt="Prescriptions" width="350" height="850"/>
 </div>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/d0103546-1e16-4297-84cf-e8ee47f8477e" alt="User Profile" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/aa2cb191-bbd4-40ca-99d8-e345fb6aedab" alt="User Profile" width="350" height="850"/>
   <img src="https://github.com/user-attachments/assets/520ec360-8710-4df3-a4ed-e92d5df1c4b9" alt="Reports & Analytics" width="350" height="850"/>
 </div>
 <div align="center">
