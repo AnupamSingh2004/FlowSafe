@@ -54,7 +54,7 @@ class _OfflineSyncScreenState extends State<OfflineSyncScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: const Color(0xFFE3F2FD), // Light blue background
       appBar: AppBar(
         title: const Text(
           'Offline Data Sync',
@@ -146,6 +146,7 @@ class _OfflineSyncScreenState extends State<OfflineSyncScreen> {
     
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -270,6 +271,7 @@ class _OfflineSyncScreenState extends State<OfflineSyncScreen> {
   Widget _buildOfflineReportsList() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

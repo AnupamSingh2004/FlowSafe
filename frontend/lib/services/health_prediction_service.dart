@@ -4,10 +4,11 @@ import 'package:geolocator/geolocator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'location_service.dart';
+import '../config/google_auth_config.dart';
 
 class HealthPredictionService {
-  // Base URL for the ML model API
-  static const String _baseUrl = 'http://192.168.165.1:8000/api';
+  // Base URL for the ML model API - use dynamic config
+  static String get _baseUrl => GoogleAuthConfig.apiBaseUrl;
   static const _storage = FlutterSecureStorage();
   
   // Health prediction data model
@@ -77,7 +78,7 @@ class HealthPredictionService {
           'Authorization': 'Bearer $token',
         },
         body: json.encode(requestData),
-      );
+      ).timeout(const Duration(seconds: 15));
       
       if (response.statusCode == 200) {
         Map<String, dynamic> data = json.decode(response.body);

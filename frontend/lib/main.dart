@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 import 'widgets/auth_wrapper.dart';
 import 'config/google_auth_config.dart';
+import 'services/language_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +15,12 @@ void main() async {
     
     GoogleAuthConfig.validateConfig();
     
-    runApp(const MyApp());
+    runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LanguageService()),
+      ],
+      child: const MyApp(),
+    ));
   } catch (e) {
     print('❌ Failed to initialize app: $e');
     runApp(MaterialApp(
@@ -43,15 +51,45 @@ void main() async {
   }
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    // Load saved language preference on app start
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<LanguageService>(context, listen: false).loadSavedLanguage();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'FlowSafe',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
+    return Consumer<LanguageService>(
+      builder: (context, languageService, child) {
+        return MaterialApp(
+          title: 'FlowSafe',
+          debugShowCheckedModeBanner: false,
+          locale: languageService.locale,
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('en', ''), // English
+            Locale('hi', ''), // Hindi
+            Locale('bn', ''), // Bengali
+            Locale('as', ''), // Assamese
+            Locale('ne', ''), // Nepali
+            Locale('mni', ''), // Manipuri
+          ],
+          theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF1976D2), // Deep Blue
         ),
@@ -72,7 +110,9 @@ class MyApp extends StatelessWidget {
           elevation: 2,
         ),
       ),
-      home: const AuthWrapper(),
+          home: const AuthWrapper(),
+        );
+      },
     );
   }
 }

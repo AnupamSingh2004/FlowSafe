@@ -9,8 +9,15 @@ import '../screens/settings_screen.dart';
 import '../screens/about_help_screen.dart';
 import '../screens/language_selection_screen.dart';
 import '../screens/offline_sync_screen.dart';
+import '../screens/water_quality_dashboard_screen.dart';
+import '../screens/community_health_reporting_screen.dart';
+import '../screens/education_modules_screen.dart';
+import '../screens/sms_dashboard_screen.dart';
+import '../screens/offline_sync_dashboard_screen.dart';
+import '../screens/health_data_collection_hub.dart';
 import '../services/api_service.dart';
 import '../widgets/auth_wrapper.dart';
+import '../widgets/localized_text.dart';
 
 class MainNavigation extends StatefulWidget {
   final String userType;
@@ -51,10 +58,69 @@ class _MainNavigationState extends State<MainNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _selectedIndex == 0 ? null : AppBar(
+      appBar: AppBar(
         backgroundColor: const Color(0xFF1976D2),
         foregroundColor: Colors.white,
         elevation: 0,
+        title: _selectedIndex == 0 ? Row(
+          children: [
+            Container(
+              width: 30,
+              height: 30,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  'assets/logo/logo.jpeg',
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(Icons.water_drop, color: Colors.white);
+                  },
+                ),
+              ),
+            ),
+            const SizedBox(width: 12),
+            const Text(
+              'FlowSafe',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ) : null,
+        actions: _selectedIndex == 0 ? [
+          Container(
+            margin: const EdgeInsets.only(right: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: Colors.green.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.satellite,
+                  color: Colors.green,
+                  size: 16,
+                ),
+                SizedBox(width: 4),
+                Text(
+                  'LIVE',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ] : null,
         leading: Builder(
           builder: (context) => IconButton(
             icon: const Icon(Icons.menu),
@@ -74,26 +140,26 @@ class _MainNavigationState extends State<MainNavigation> {
         elevation: 8,
         selectedFontSize: 12,
         unselectedFontSize: 12,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: const Icon(Icons.home),
+            label: getLocalizedText(context, 'home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.map),
-            label: 'Risk Map',
+            icon: const Icon(Icons.map),
+            label: getLocalizedText(context, 'map'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.warning),
-            label: 'Alerts',
+            icon: const Icon(Icons.warning),
+            label: getLocalizedText(context, 'alerts'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.smart_toy),
+            icon: const Icon(Icons.smart_toy),
             label: 'Assistant',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.analytics),
-            label: 'Reports',
+            icon: const Icon(Icons.analytics),
+            label: getLocalizedText(context, 'reports'),
           ),
         ],
       ),
@@ -176,7 +242,7 @@ class _MainNavigationState extends State<MainNavigation> {
   Widget _buildSettingsMenuItems() {
     return Column(
       children: [
-        _buildMenuItem(Icons.person, 'Profile', () {
+        _buildMenuItem(Icons.person, getLocalizedText(context, 'profile'), () {
           Navigator.push(context, MaterialPageRoute(
             builder: (context) => ProfileScreen(userType: widget.userType),
           ));
@@ -186,16 +252,70 @@ class _MainNavigationState extends State<MainNavigation> {
             builder: (context) => const OfflineSyncScreen(),
           ));
         }),
-        _buildMenuItem(Icons.settings, 'Settings', () {
+        _buildMenuItem(Icons.settings, getLocalizedText(context, 'settings'), () {
           Navigator.push(context, MaterialPageRoute(
             builder: (context) => SettingsScreen(userType: widget.userType),
           ));
         }),
-        _buildMenuItem(Icons.language, 'Language / भाषा', () {
+        _buildMenuItem(Icons.language, getLocalizedText(context, 'language') + ' / भाषा', () {
           Navigator.push(context, MaterialPageRoute(
             builder: (context) => const LanguageSelectionScreen(),
           ));
         }),
+        
+        const Divider(),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: Text(
+            'Health & Safety',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey,
+            ),
+          ),
+        ),
+        
+        _buildMenuItem(Icons.data_usage, 'Health Data Collection', () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => HealthDataCollectionHub(userType: widget.userType),
+          ));
+        }),
+        
+        _buildMenuItem(Icons.water_drop, 'Water Quality Monitoring', () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => const WaterQualityDashboardScreen(),
+          ));
+        }),
+        
+        if (widget.userType == 'asha_worker' || widget.userType == 'community_volunteer')
+          _buildMenuItem(Icons.health_and_safety, 'Community Health Reports', () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => CommunityHealthReportingScreen(userType: widget.userType),
+            ));
+          }),
+        
+        _buildMenuItem(Icons.school, 'Health Education', () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => const EducationModulesScreen(),
+          ));
+        }),
+        
+        if (widget.userType == 'asha_worker' || widget.userType == 'community_volunteer' || widget.userType == 'health_official')
+          _buildMenuItem(Icons.message, 'SMS Dashboard', () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => const SMSDashboardScreen(),
+            ));
+          }),
+        
+        _buildMenuItem(Icons.sync, 'Offline Sync', () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => const OfflineSyncDashboardScreen(),
+          ));
+        }),
+        
+        const Divider(),
+        
         _buildMenuItem(Icons.help, 'Help & Support', () {
           Navigator.push(context, MaterialPageRoute(
             builder: (context) => const AboutHelpScreen(),

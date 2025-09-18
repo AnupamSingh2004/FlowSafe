@@ -104,7 +104,7 @@ class _DiseaseMonitoringScreenState extends State<DiseaseMonitoringScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: const Color(0xFFE3F2FD), // Light blue background
       appBar: AppBar(
         title: const Text(
           'Disease Surveillance',
@@ -141,6 +141,7 @@ class _DiseaseMonitoringScreenState extends State<DiseaseMonitoringScreen> {
   Widget _buildLocationCard() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -181,6 +182,7 @@ class _DiseaseMonitoringScreenState extends State<DiseaseMonitoringScreen> {
   Widget _buildPatientInfoCard() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -269,6 +271,7 @@ class _DiseaseMonitoringScreenState extends State<DiseaseMonitoringScreen> {
   Widget _buildDiseaseInfoCard() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -372,6 +375,7 @@ class _DiseaseMonitoringScreenState extends State<DiseaseMonitoringScreen> {
   Widget _buildSymptomsCard() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -424,6 +428,7 @@ class _DiseaseMonitoringScreenState extends State<DiseaseMonitoringScreen> {
   Widget _buildWaterSourceCard() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -488,6 +493,7 @@ class _DiseaseMonitoringScreenState extends State<DiseaseMonitoringScreen> {
     
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

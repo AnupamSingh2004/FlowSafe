@@ -77,7 +77,7 @@ class _WaterQualityScreenState extends State<WaterQualityScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: const Color(0xFFE3F2FD), // Light blue background
       appBar: AppBar(
         title: const Text(
           'Water Quality Monitoring',
@@ -110,6 +110,7 @@ class _WaterQualityScreenState extends State<WaterQualityScreen> {
   Widget _buildLocationCard() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -150,6 +151,7 @@ class _WaterQualityScreenState extends State<WaterQualityScreen> {
   Widget _buildWaterSourceCard() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -200,6 +202,7 @@ class _WaterQualityScreenState extends State<WaterQualityScreen> {
   Widget _buildWaterQualityParameters() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -313,6 +316,7 @@ class _WaterQualityScreenState extends State<WaterQualityScreen> {
   Widget _buildTestDetailsCard() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

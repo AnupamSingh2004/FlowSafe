@@ -307,7 +307,7 @@ class _HygieneEducationScreenState extends State<HygieneEducationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: const Color(0xFFE3F2FD), // Light blue background
       appBar: AppBar(
         title: const Text(
           'Hygiene & Disease Prevention',
@@ -380,6 +380,7 @@ class _HygieneEducationScreenState extends State<HygieneEducationScreen> {
   Widget _buildModuleHeader(EducationModule module) {
     return Card(
       elevation: 4,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -438,6 +439,7 @@ class _HygieneEducationScreenState extends State<HygieneEducationScreen> {
     return Card(
       margin: const EdgeInsets.only(bottom: 16),
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: ExpansionTile(
         leading: Icon(Icons.school, color: Color(0xFF1976D2)),
         title: Text(

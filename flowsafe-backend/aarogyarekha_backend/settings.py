@@ -238,6 +238,8 @@ CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='').split(',') if 
     "http://127.0.0.1:8000",
     "http://192.168.165.1:8000",  # Current host IP
     "http://192.168.165.1:3000",  # Frontend on host IP
+    "http://10.24.78.1:8000",     # Updated host IP
+    "http://10.24.78.1:3000",     # Updated host IP frontend
     # Flutter/Dart specific origins
     "http://localhost:50000",
     "http://127.0.0.1:50000",
@@ -276,6 +278,8 @@ CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='').split(',') if 
     "http://127.0.0.1:8000",
     "http://192.168.1.6:8000",
     "http://192.168.1.6:3000",
+    "http://10.24.78.1:8000",
+    "http://10.24.78.1:3000",
 ]
 
 # Add Azure domain to CSRF trusted origins if in production

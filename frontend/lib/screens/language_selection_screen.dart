@@ -21,7 +21,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: const Color(0xFFE3F2FD), // Light blue background
       appBar: AppBar(
         title: const Text(
           'Select Language / भाषा चुनें',
@@ -50,6 +50,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
   Widget _buildHeaderCard() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -95,6 +96,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
   Widget _buildLanguageList() {
     return Card(
       elevation: 2,
+      color: const Color(0xFFBBDEFB), // Light blue card
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -271,15 +273,17 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {
-          _languageService.setLanguage(_selectedLanguage);
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Language changed to $_selectedLanguage'),
-              backgroundColor: const Color(0xFF1976D2),
-            ),
-          );
-          Navigator.pop(context);
+        onPressed: () async {
+          await _languageService.setLanguage(_selectedLanguage);
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Language changed to $_selectedLanguage'),
+                backgroundColor: const Color(0xFF1976D2),
+              ),
+            );
+            Navigator.pop(context);
+          }
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFF1976D2),

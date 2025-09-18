@@ -1,4 +1,4 @@
-package com.aarogyarekha.app
+package com.flowsafe.app
 
 import io.flutter.embedding.android.FlutterActivity
 

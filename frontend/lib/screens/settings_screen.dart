@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/localized_text.dart';
 
 class SettingsScreen extends StatefulWidget {
   final String userType;
@@ -20,7 +21,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: const LocalizedText('settings'),
         backgroundColor: const Color(0xFF1976D2),
         foregroundColor: Colors.white,
       ),
@@ -31,7 +32,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           children: [
             // Language Settings
             _buildSettingsSection(
-              'Language Preferences',
+              getLocalizedText(context, 'language') + ' Preferences',
               [
                 _buildLanguageSelector(),
               ],
@@ -41,7 +42,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             
             // Notification Settings
             _buildSettingsSection(
-              'Notifications',
+              getLocalizedText(context, 'notifications'),
               [
                 _buildSwitchTile(
                   'Enable Notifications',
