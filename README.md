@@ -36,8 +36,8 @@ FlowSafe is a comprehensive **Smart Health Surveillance and Early Warning System
 **Preventing water-borne disease outbreaks through predictive intelligence, community empowerment, and rapid response coordination.**
 
 ### 🏆 Key Achievements
-- **94% Accuracy** in disease outbreak prediction using XGBoost ML models
-- **60% Reduction** in outbreak response time through real-time alerts
+- **Comprehensive ML Pipeline** with XGBoost models for disease outbreak pattern recognition
+- **Real-time Alert System** enabling immediate notification of health authorities and communities
 - **Multi-stakeholder Platform** serving health workers, officials, and communities
 - **Offline-First Design** ensuring functionality in remote areas with poor connectivity
 - **Multilingual Support** including tribal languages for maximum accessibility
