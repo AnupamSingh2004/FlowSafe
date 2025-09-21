@@ -24,36 +24,38 @@ The system combines advanced water quality monitoring, comprehensive health data
 By integrating IoT sensors, mobile health reporting, AI-based outbreak prediction, comprehensive data analytics, and emergency response systems, FlowSafe empowers health workers, community volunteers, and local governance bodies to take proactive measures before outbreaks occur.
 
 
-
-
-## Screenshots
-
-### Mobile App Interface
-
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/c444f037-8f64-4fb0-b26e-d54973585274" alt="Settings" width="350" height="850"/>
-  <img src="https://github.com/user-attachments/assets/4d027694-d363-4638-abf0-e679839be9af" alt="Prescriptions" width="350" height="850"/>
-</div>
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/aa2cb191-bbd4-40ca-99d8-e345fb6aedab" alt="User Profile" width="350" height="850"/>
-  <img src="https://github.com/user-attachments/assets/520ec360-8710-4df3-a4ed-e92d5df1c4b9" alt="Reports & Analytics" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/800eb1e5-2d67-409d-8a5a-d6d21c5129cd" alt="WhatsApp Image 1" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/13c05b77-91bb-40a7-8e61-805a6805e297" alt="WhatsApp Image 2" width="350" height="850"/>
 </div>
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/2d8bb1c3-4a90-4bca-9add-d9fac237326c" alt="AI Chatbot" width="350" height="850"/>
-  <img src="https://github.com/user-attachments/assets/3bf5820f-bcd4-4546-acd3-d51e1d8e7078" alt="Satellite Intelligence" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/62e84847-6f1e-47b3-8454-4cfc746e3cec" alt="WhatsApp Image 3" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/a81fedd9-cf46-4082-a1f5-51e135fbe90f" alt="WhatsApp Image 4" width="350" height="850"/>
 </div>
-
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/9c284055-607f-4a8a-a3a9-127fe76c3603" alt="Alert System" width="350" height="850"/>
-  <img src="https://github.com/user-attachments/assets/8521e27c-7096-4bf9-bdf6-53c7a1ad915d" alt="Risk Map" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/f4db653e-41bf-4a0d-854e-19260abe2c04" alt="WhatsApp Image 5" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/6749240a-e9bd-4d62-8a93-4952d2422e1d" alt="WhatsApp Image 6" width="350" height="850"/>
 </div>
-
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/acde075b-b754-48b2-a7f9-799d902ccc02" alt="Health Prediction" width="350" height="850"/>
-  <img src="https://github.com/user-attachments/assets/7ee0cce0-99e7-473b-aae6-08a4a71739f5" alt="Dashboard Screen" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/89856c4b-dca0-4103-bb09-30cb7721ec9a" alt="WhatsApp Image 7" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/0376c8a4-7d42-4f7f-ab71-d10901045771" alt="WhatsApp Image 8" width="350" height="850"/>
 </div>
-
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/f4052332-f8f4-49d4-b1ea-4bf20013546c" alt="WhatsApp Image 9" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/7003c4b7-2534-41d0-8fda-110a6b50daea" alt="WhatsApp Image 10" width="350" height="850"/>
+</div>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b2353e0e-b06d-46bc-b4bb-9d9be58ecb29" alt="WhatsApp Image 11" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/333e82d3-922e-46c4-8378-3abc52bb53ef" alt="WhatsApp Image 12" width="350" height="850"/>
+</div>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/576f4893-d5ef-408f-b2d5-6510621768bc" alt="WhatsApp Image 13" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/8e2a30f3-fae5-4e4c-a5e5-7ca389ebfc5d" alt="WhatsApp Image 14" width="350" height="850"/>
+</div>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0970a7f3-6f6e-48ee-a795-7ac4baab4170" alt="WhatsApp Image 15" width="350" height="850"/>
+  <img src="https://github.com/user-attachments/assets/bb21abeb-cf6b-432d-88a6-32ea9beaa0d0" alt="WhatsApp Image 16" width="350" height="850"/>
+</div>
 
 
 
