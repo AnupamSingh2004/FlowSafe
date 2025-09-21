@@ -14,7 +14,7 @@
 [![Water Quality](https://img.shields.io/badge/Water%20Quality-IoT%20Ready-blue.svg)](https://www.who.int/news-room/fact-sheets/detail/drinking-water)
 [![Analytics](https://img.shields.io/badge/Analytics-Interactive-blue.svg)](https://pub.dev/packages/fl_chart)
 [![Emergency](https://img.shields.io/badge/Emergency-Real%20Time-red.svg)](https://flutter.dev/)
-[![SIH 2024](https://img.shields.io/badge/Smart%20India%20Hackathon-2024-orange.svg)](https://www.sih.gov.in/)
+
 
 </div>
 
