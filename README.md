@@ -1,4 +1,4 @@
-# FlowSafe 🌊
+# FlowSafe 
 ### *AI-Powered Smart Health Surveillance and Early Warning System for Water-borne Disease Prevention*
 
 <div align="center">
@@ -136,7 +136,7 @@ FlowSafe is a comprehensive **Smart Health Surveillance and Early Warning System
 
 FlowSafe offers a comprehensive suite of features designed to address every aspect of water-borne disease surveillance and prevention:
 
-### 🚨 Emergency Reporting System *[New]*
+### 🚨 Emergency Reporting System
 - **Critical Health Incidents** - Immediate reporting of disease outbreaks, water contamination, and medical emergencies
 - **Real-time Alert Distribution** - Instant notifications to health authorities and emergency responders  
 - **Severity Assessment** - Automated risk scoring with color-coded priority levels
@@ -144,7 +144,7 @@ FlowSafe offers a comprehensive suite of features designed to address every aspe
 - **Incident Tracking** - Complete audit trail from report to resolution
 - **Geographic Mapping** - GPS-based incident location for rapid response coordination
 
-### 📊 Comprehensive Health Data Collection Hub *[New]*
+### 📊 Comprehensive Health Data Collection Hub
 - **Field Survey Management** - Door-to-door household health surveys with demographic tracking
 - **Health Camp Data Collection** - Medical camp organization, patient statistics, and service delivery tracking
 - **ASHA Worker Interface** - Specialized tools for community health workers with simplified data entry
@@ -152,7 +152,7 @@ FlowSafe offers a comprehensive suite of features designed to address every aspe
 - **Clinic Data Integration** - Local health clinic data collection with patient management capabilities
 - **Role-based Access Control** - Customized interfaces based on user type (ASHA, Volunteer, Clinic Staff)
 
-### 📈 Advanced Analytics Dashboard *[New]*
+### 📈 Advanced Analytics Dashboard
 - **Interactive Charts & Graphs** - Real-time data visualization using fl_chart library
 - **Trend Analysis** - Monthly, weekly, and daily health trend monitoring
 - **Survey Analytics** - Completion rates, demographic analysis, and geographic distribution
@@ -178,7 +178,7 @@ FlowSafe offers a comprehensive suite of features designed to address every aspe
 - **Automatic health authority alerts** for high-risk cases with emergency escalation
 - **Outbreak Pattern Recognition** - Machine learning models for early detection
 
-### 📋 Field Survey & Data Collection *[Enhanced]*
+### 📋 Field Survey & Data Collection
 - **Household Information Management** - Complete family composition tracking with age group analysis
 - **Socio-Economic Data Collection** - Income, education, and living condition assessment
 - **Infrastructure Assessment** - Water access, sanitation, electricity availability tracking
@@ -471,7 +471,7 @@ FlowSafe provides a comprehensive RESTful API for seamless integration with exis
 - `GET /api/alerts/waterborne/` - Get water-related health alerts
 - `POST /api/alerts/mark-read/` - Mark alerts as read
 
-### Health Data Collection Endpoints *[New]*
+### Health Data Collection Endpoints
 
 - `POST /api/health-data/field-survey/` - Submit field survey data
 - `GET /api/health-data/field-surveys/` - Get field survey history
@@ -485,7 +485,7 @@ FlowSafe provides a comprehensive RESTful API for seamless integration with exis
 - `GET /api/health-data/clinic-reports/` - Get clinic data records
 - `GET /api/health-data/analytics/` - Get comprehensive health data analytics
 
-### Emergency Reporting Endpoints *[New]*
+### Emergency Reporting Endpoints
 
 - `POST /api/emergency/report/` - Submit emergency health incident
 - `GET /api/emergency/reports/` - Get emergency reports history
