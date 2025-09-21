@@ -523,7 +523,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 ---
 
 <div align="center">
-  <h3>� "FlowSafe is not just an app — it's a guardian of water safety."</h3>
+  <h3>"FlowSafe is not just an app — it's a guardian of water safety."</h3>
   <p><i>A smart water monitoring system that stands watch over your community's water sources, alerts you before contamination spreads, and empowers communities to protect their health — not after disease outbreaks, but before they begin.</i></p>
 </div>
 
