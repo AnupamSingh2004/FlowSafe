@@ -300,40 +300,103 @@ flutter build web
 ## 📱 App Screens Overview
 
 ### 🏠 Dashboard
-- Health status overview
-- Risk indicators for your area
-- Quick actions (Health Check, Chatbot, Alerts)
-- Weather and environmental data
+- Comprehensive health status overview with real-time analytics
+- Risk indicators for your area with predictive modeling
+- Quick actions (Health Check, Chatbot, Alerts, Emergency Reporting)
+- Weather and environmental data integration
+- Role-based interface customization
 
-### 🤖 AI Chatbot
-- Natural language health queries
+### 🚨 Emergency Reporting *[New]*
+- Critical health incident reporting interface
+- Severity assessment with automated risk scoring
+- Real-time alert distribution to authorities
+- GPS-based incident location tracking
+- Contact management for emergency services
+- Incident status tracking and resolution monitoring
+
+### 📊 Health Data Collection Hub *[New]*
+- Central navigation for all data collection activities
+- Role-based access for ASHA workers, volunteers, and clinic staff
+- Data collection statistics and progress tracking
+- Quick access to field surveys, health camps, and emergency reporting
+- Offline data collection capabilities with automatic sync
+
+### 📋 Field Survey Management *[New]*
+- Door-to-door household health surveys
+- Demographic data collection and family composition tracking
+- Infrastructure assessment (water, sanitation, electricity)
+- Health status monitoring and vaccination tracking
+- Survey analytics with completion rates and trend analysis
+
+### 🏥 Health Camp Data Collection *[New]*
+- Medical camp organization and patient statistics
+- Service delivery tracking and resource management
+- Patient demographics and treatment records
+- Camp performance analytics and reporting
+- Integration with local health systems
+
+### 👩‍⚕️ ASHA Worker Interface *[New]*
+- Specialized tools for community health workers
+- Simplified data entry workflows
+- Community health monitoring dashboard
+- Progress tracking and performance metrics
+- Direct communication with health authorities
+
+### 🙋‍♂️ Volunteer Data Collection *[New]*
+- Community volunteer interface for health data gathering
+- Awareness campaign tracking and effectiveness measurement
+- Simplified reporting tools for non-medical personnel
+- Progress tracking and volunteer coordination
+- Community engagement analytics
+
+### 🏥 Clinic Data Management *[New]*
+- Local health clinic data collection interface
+- Patient management and service tracking
+- Resource allocation and utilization monitoring
+- Performance metrics and reporting
+- Integration with district health systems
+
+### 💧 Water Quality Dashboard *[Enhanced]*
+- Interactive water quality analytics with advanced charts
+- Real-time monitoring of pH levels, turbidity, and bacterial contamination
+- Monthly and weekly trend analysis with predictive modeling
+- Water source safety distribution visualization
+- Testing activity monitoring and compliance tracking
+
+### 🤖 AI Chatbot *[Enhanced]*
+- Natural language health queries with emergency escalation
 - Multilingual support (Hindi, English, regional languages)
-- Personalized health recommendations
-- Symptom assessment
+- Personalized health recommendations based on collected data
+- Symptom assessment with emergency response integration
+- Context-aware responses using comprehensive health database
 
-### 🗺️ Risk Map
-- Interactive map with risk zones
-- Real-time outbreak predictions
-- Location-based alerts
-- Historical trend analysis
+### 🗺️ Interactive Risk Map *[Enhanced]*
+- Interactive map with risk zones and water quality overlays
+- Real-time outbreak predictions with geographic visualization
+- Location-based alerts with customizable radius settings
+- Historical trend analysis and pattern recognition
+- Water contamination source mapping
 
-### 👤 Profile
-- User information and preferences
-- Health history and records
-- Notification settings
-- Privacy and security options
+### 👤 Profile Management *[Enhanced]*
+- User information and preferences with role-based customization
+- Comprehensive health history and records
+- Notification settings with emergency alert preferences
+- Privacy and security options with data control
+- Multi-role support for different user types
 
-### 📋 Health Check
-- Symptom assessment questionnaire
-- Risk evaluation based on location
-- Personalized prevention tips
-- Historical health data
+### 📋 Health Check *[Enhanced]*
+- Comprehensive symptom assessment questionnaire
+- Risk evaluation based on location and water quality data
+- Personalized prevention tips and emergency recommendations
+- Historical health data with trend analysis
+- Integration with emergency reporting system
 
-### 🔔 Notifications
-- Disease outbreak alerts
-- Preventive health tips
-- Weather-related health warnings
-- Community health updates
+### 🔔 Smart Notifications *[Enhanced]*
+- Disease outbreak alerts with severity-based prioritization
+- Preventive health tips based on local conditions
+- Weather-related health warnings with predictive analytics
+- Community health updates and emergency broadcasts
+- Customizable alert preferences with emergency escalation
 
 ## 🌍 Localization
 
