@@ -3,6 +3,11 @@
 
 <div align="center">
 
+
+<div align="center">
+  <img src="./frontend/assets/logo/logo.jpeg" alt="FlowSafe Logo" width="200" height="200"/>
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Flutter](https://img.shields.io/badge/Flutter-3.8.1-blue.svg)](https://flutter.dev/)
 [![Dart](https://img.shields.io/badge/Dart-3.8.1-blue.svg)](https://dart.dev/)
